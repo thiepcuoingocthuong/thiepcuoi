@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu & Liên Hệ - Nhà In Thiệp Cưới Ngọc Thương Đồng Nai</title>
+    <meta name="description" content="Giới thiệu Nhà In Thiệp Cưới Ngọc Thương tại 135, Tổ 6 - Ấp 8 - Xuân Đông - Đồng Nai. Chuyên in thiệp cưới hiện đại, truyền thống, thiệp mời sự kiện và tặng thiệp cưới online. Hotline/Zalo: 0773060379.">
+    <link rel="canonical" href="https://thiepcuoingocthuong.com/gioi-thieu.html">
+    <link rel="icon" type="image/png" href="anh/logo.png">
+    <style>
+        /* --- 1. CÀI ĐẶT CHUNG --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- 2. PHẦN BANNER --- */
+        .banner {
+            position: relative;
+            width: 100%;
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            color: white;
+            text-align: center;
+        }
+
+        .banner-search {
+            position: absolute;
+            top: 50%;
+            right: 50px;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .banner-search form {
+            display: flex;
+            align-items: center;
+            width: 260px;
+            height: 40px;
+            background: #fff;
+            border: 1px solid #ead4cc;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .banner-search input {
+            flex: 1;
+            min-width: 0;
+            height: 100%;
+            padding: 0 14px;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .banner-search button {
+            height: 100%;
+            padding: 0 13px;
+            border: none;
+            background: #fff;
+            color: #526456;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* --- 3. THANH MENU NGANG --- */
+        .navbar {
+            background-color: #526456;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .main-menu {
+            list-style: none;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu-item a {
+            display: block;
+            color: #e5e7eb;
+            text-decoration: none;
+            padding: 18px 22px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .menu-item:hover > a {
+            background-color: #687b6c;
+            color: #ffffff;
+        }
+
+        .dropdown-menu {
+            list-style: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #526456;
+            min-width: 220px;
+            display: none;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .dropdown-menu a {
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #1a3038;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #687b6c;
+            padding-left: 25px;
+        }
+
+        .menu-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* --- 4. NỘI DUNG TRANG GIỚI THIỆU --- */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .cum-tieu-de-danh-muc {
+            margin-bottom: 28px;
+            width: 100%;
+        }
+
+        .cum-tieu-de-danh-muc h1 {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 24px;
+            color: #6a0716;
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #6a0716;
+        }
+
+        .intro-hero {
+            background: #ffffff;
+            border: 1px solid #ece6e4;
+            border-left: 5px solid #6a0716;
+            border-radius: 10px;
+            padding: 28px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(82, 100, 86, 0.06);
+        }
+
+        .intro-hero h2 {
+            color: #6a0716;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .intro-hero p {
+            color: #444;
+            font-size: 15.5px;
+            margin-bottom: 12px;
+        }
+
+        .intro-hero p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: #526456;
+            font-size: 19px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            padding-left: 12px;
+            border-left: 4px solid #526456;
+        }
+
+        /* Lưới dịch vụ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #ece6e4;
+            border-radius: 10px;
+            padding: 22px 20px;
+            box-shadow: 0 2px 8px rgba(82, 100, 86, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(106, 7, 22, 0.1);
+            border-color: #d8b4b8;
+        }
+
+        .service-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #6a0716;
+            font-size: 16.5px;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 14.5px;
+        }
+
+        /* Khối Địa điểm kinh doanh & Bản đồ */
+        .contact-map-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 24px;
+            background: #ffffff;
+            border: 1px solid #ece6e4;
+            border-radius: 10px;
+            padding: 26px;
+            box-shadow: 0 2px 10px rgba(82, 100, 86, 0.06);
+        }
+
+        .business-info h2 {
+            color: #6a0716;
+            font-size: 19px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .info-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ece6e4;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list strong {
+            color: #526456;
+        }
+
+        .info-list a {
+            color: #6a0716;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .info-list a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14.5px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-call {
+            background-color: #6a0716;
+            color: #ffffff;
+        }
+
+        .btn-call:hover {
+            background-color: #8a0c20;
+        }
+
+        .btn-zalo {
+            background-color: #526456;
+            color: #ffffff;
+        }
+
+        .btn-zalo:hover {
+            background-color: #687b6c;
+        }
+
+        .map-frame-box {
+            width: 100%;
+            min-height: 340px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .map-frame-box iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            border: 0;
+            display: block;
+        }
+
+        .navbar-mobile,
+        .banner-mobile,
+        .footer-mobile {
+            display: none !important;
+        }
+
+        /* --- 5. FOOTER PC --- */
+        footer {
+            background-color: #e0e1e0;
+            color: #000;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-col { flex: 1; min-width: 280px; margin-bottom: 30px; padding-right: 20px; }
+        .footer-col h3 { color: #000; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-col p { margin-bottom: 10px; }
+        .footer-col strong { color: #000; }
+        .footer-links { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { color: #000; text-decoration: none; }
+        .footer-links a:hover { color: #03692a; }
+        .footer-copyright { text-align: center; border-top: 1px solid #bab6b6; margin-top: 20px; padding-top: 20px; font-size: 0.8rem; color: #000; width: 100%; }
+
+        /* --- 6. RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-map-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-hero {
+                padding: 20px 18px;
+            }
+
+            .contact-map-wrapper {
+                padding: 18px;
+            }
+
+            .main-menu, .navbar, .banner, footer, .menu-item, .banner-search, .vung-chua-2-box {
+                display: none !important;
+            }
+
+            .navbar-mobile {
+                display: flex !important;
+                justify-content: space-around;
+                align-items: center;
+                background: #526456;
+                padding: 8px 5px;
+                position: sticky;
+                top: 0;
+                z-index: 999;
+            }
+
+            .navbar-mobile > a,
+            .mobile-dropdown-btn {
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 14.5px;
+                cursor: pointer;
+                list-style: none;
+                user-select: none;
+            }
+
+            .mobile-dropdown-btn::-webkit-details-marker {
+                display: none;
+            }
+
+            .mobile-dropdown {
+                position: relative;
+            }
+
+            .mobile-dropdown-content {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #435247;
+                min-width: 200px;
+                box-shadow: 0px 8px 16px rgba(0,0,0,0.25);
+                border-radius: 6px;
+                margin-top: 8px;
+                overflow: hidden;
+                z-index: 1000;
+            }
+
+            .mobile-dropdown-content a {
+                color: #ffffff;
+                padding: 10px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: 13.5px;
+                font-weight: normal;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .mobile-dropdown-content a:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-dropdown-content a:active {
+                background-color: #687b6c;
+            }
+
+            .banner-mobile {
+                display: block !important;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .banner-mobile img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .footer-mobile {
+                display: block !important;
+                background: #526456;
+                color: #ffffff;
+                text-align: center;
+                padding: 25px 15px;
+                font-size: 13.5px;
+                line-height: 1.6;
+                margin-top: 30px;
+            }
+
+            .footer-mobile h4 {
+                color: #ffffff;
+                font-size: 15px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+
+            .footer-mobile p {
+                margin-bottom: 8px;
+            }
+
+            .footer-mobile-actions {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin: 15px 0;
+            }
+
+            .footer-mobile-actions a {
+                background: #ffffff;
+                color: #526456;
+                padding: 8px 16px;
+                border-radius: 20px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 13px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+
+            .footer-mobile-copy {
+                border-top: 1px solid rgba(255,255,255,0.1);
+                margin-top: 15px;
+                padding-top: 12px;
+                font-size: 12px;
+                color: #bbb;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. BANNER CỬA HÀNG -->
+    <div class="banner-mobile">
+        <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Thiệp Cưới Ngọc Thương Mobile"></a>
+    </div>
+
+    <div class="banner">
+        <img src="anh/banner.png" alt="Nhà In Thiệp Cưới Ngọc Thương - Mẫu Thiệp Cưới Đẹp Tại Đồng Nai">
+        <div class="banner-content">
+            <div class="banner-search">
+                <form id="search-form" action="tim-kiem.html" method="get">
+                    <input type="text" id="search-input" name="code" placeholder="Tìm mã hoặc tên thiệp..." autocomplete="off">
+                    <button type="submit" id="search-btn">🔍</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. THANH MENU NGANG PC -->
+    <nav class="navbar">
+        <ul class="main-menu">
+            <li class="menu-item"><a href="index.html">Trang Chủ</a></li>
+            <li class="menu-item"><a href="gioi-thieu.html">Giới Thiệu</a></li>
+            <li class="menu-item">
+                <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Cưới ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="thiepcuoi-hiendai.html">Thiệp Cưới Hiện Đại</a></li>
+                    <li><a href="thiepcuoi-truyenthong.html">Thiệp Cưới Truyền Thống</a></li>
+                    <li><a href="thiepcuoi-docquyen.html">Thiệp Cưới Độc Quyền KTS</a></li>
+                    <li><a href="thiepcuoi-dq-25.html">Thiệp Cưới DQ_25</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="thiep-tangia.html">Thiệp Mời ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="thiep-tangia.html">Thiệp Tân Gia</a></li>
+                    <li><a href="thiep-sinhnhat.html">Thiệp Sinh Nhật</a></li>
+                    <li><a href="thiep-taon.html">Thiệp Công Giáo</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="thiepcuoi-online.html">Thiệp Cưới Online</a></li>
+            <li class="menu-item">
+                <a href="huong-dan-dat-thiep.html">Hướng Dẫn ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="huong-dan-dat-thiep.html">Hướng dẫn đặt thiệp</a></li>
+                    <li><a href="huong-dan-viet-thiep.html">Hướng dẫn viết thiệp cưới</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="lienhe.html">Liên Hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <nav class="navbar-mobile">
+        <details class="mobile-dropdown">
+            <summary class="mobile-dropdown-btn">Sản Phẩm ▾</summary>
+            <div class="mobile-dropdown-content">
+                <a href="index.html">📌 Tất Cả Mẫu Thiệp</a>
+                <a href="thiepcuoi-hiendai.html">Mẫu Thiệp Hiện Đại</a>
+                <a href="thiepcuoi-truyenthong.html">Mẫu Thiệp Truyền Thống</a>
+                <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Độc Quyền KTS</a>
+                <a href="thiepcuoi-dq-25.html">Mẫu Thiệp DQ_25</a>
+                <a href="thiep-tangia.html">Thiệp Tân Gia</a>
+                <a href="thiep-sinhnhat.html">Thiệp Sinh Nhật</a>
+                <a href="thiep-taon.html">Thiệp Công Giáo</a>
+            </div>
+        </details>
+        <a href="thiepcuoi-online.html">Thiệp Online</a>
+        <details class="mobile-dropdown">
+            <summary class="mobile-dropdown-btn">Hướng dẫn ▾</summary>
+            <div class="mobile-dropdown-content">
+                <a href="huong-dan-dat-thiep.html">Hướng dẫn đặt thiệp</a>
+                <a href="huong-dan-viet-thiep.html">Hướng dẫn viết thiệp cưới</a>
+            </div>
+        </details>
+        <a href="gioi-thieu.html">Giới Thiệu</a>
+    </nav>
+
+    <!-- 3. KHU VỰC NỘI DUNG GIỚI THIỆU -->
+    <main class="container">
+        <div class="cum-tieu-de-danh-muc">
+            <h1>GIỚI THIỆU NHÀ IN THIỆP CƯỚI NGỌC THƯƠNG</h1>
+        </div>
+
+        <!-- Khối giới thiệu tổng quan -->
+        <section class="intro-hero">
+            <h2>Tinh Tế Trong Từng Đường Nét – Trọn Vẹn Ngày Chung Đôi</h2>
+            <p>
+                <strong>Nhà In Thiệp Cưới Ngọc Thương</strong> là cơ sở chuyên thiết kế và in ấn các dòng thiệp cưới, thiệp mời sự kiện chất lượng cao tại Đồng Nai và giao hàng toàn quốc. Với sự tỉ mỉ trong từng công đoạn từ chọn phôi giấy mỹ thuật, ép kim, in kỹ thuật số sắc nét đến đóng gói thành phẩm, chúng tôi luôn mong muốn mang đến cho các cặp đôi những tấm thiệp trang trọng và chỉn chu nhất.
+            </p>
+            <p>
+                Bên cạnh thiệp in truyền thống và hiện đại, Ngọc Thương còn thiết kế <strong>Thiệp Cưới Online</strong> tích hợp bản đồ chỉ đường, album ảnh cưới và lời chúc mừng để khách hàng dễ dàng gửi mời bạn bè, người thân ở xa qua Zalo, Facebook.
+            </p>
+        </section>
+
+        <!-- Khối các dịch vụ cung cấp -->
+        <h2 class="section-title">Các Dịch Vụ Tại Ngọc Thương</h2>
+        <section class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">💌</span>
+                <h3>In Thiệp Cưới Hiện Đại & KTS</h3>
+                <p>Đa dạng mẫu mã trẻ trung, thiệp túi sang trọng, giấy ánh kim thơm 200g, in kỹ thuật số sắc nét, bền màu.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🏮</span>
+                <h3>Thiệp Cưới Truyền Thống & Độc Quyền</h3>
+                <p>Các mẫu thiệp đỏ truyền thống, họa tiết song hỷ, ép kim tinh xảo cùng bộ sưu tập phôi độc quyền cập nhật liên tục.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">📱</span>
+                <h3>Thiết Kế Thiệp Cưới Online</h3>
+                <p>Tặng kèm hoặc thiết kế riêng thiệp cưới điện tử hiện đại có nhạc nền, bản đồ Google Maps, album ảnh và xác nhận tham dự.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🎉</span>
+                <h3>In Thiệp Mời Sự Kiện</h3>
+                <p>Nhận thiết kế và in nhanh thiệp Tân Gia, thiệp Sinh Nhật, thiệp Thôi Nôi, thiệp Công Giáo (Tạ Ơn, Rửa Tội, Hôn Phối).</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🗺️</span>
+                <h3>In Mã QR Bản Đồ & Lên Maquette Miễn Phí</h3>
+                <p>Hỗ trợ tạo mã QR dẫn đường Google Maps tới nhà hàng/tư gia và gửi bản thiết kế duyệt nội dung trước khi in hàng loạt.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🚚</span>
+                <h3>Tư Vấn Tận Tâm & Giao Hàng Toàn Quốc</h3>
+                <p>Hỗ trợ chỉnh sửa nội dung, xưng hô hai họ chuẩn mực, in nhanh đúng hẹn và giao hàng tận nơi trên toàn quốc.</p>
+            </div>
+        </section>
+
+        <!-- Khối Địa điểm kinh doanh & Khung nhúng Google Maps -->
+        <h2 class="section-title">Địa Điểm Kinh Doanh & Bản Đồ Chỉ Đường</h2>
+        <section class="contact-map-wrapper">
+            <div class="business-info">
+                <h2>Nhà In Thiệp Cưới Ngọc Thương</h2>
+                <ul class="info-list">
+                    <li><strong>📍 Địa chỉ xưởng in:</strong> 135, Tổ 6 - Ấp 8 - Xuân Đông - Tp. Đồng Nai</li>
+                    <li><strong>📞 Số điện thoại / Zalo:</strong> <a href="tel:0773060379">0773 060 379</a></li>
+                    <li><strong>⏰ Giờ mở cửa:</strong> 08:00 – 21:00 (Tất cả các ngày trong tuần)</li>
+                    <li><strong>💬 Tư vấn trực tuyến:</strong> Hỗ trợ 24/7 qua Zalo <a href="https://zalo.me/0773060379" target="_blank" rel="noopener noreferrer">0773060379</a></li>
+                    <li><strong>🚚 Phạm vi phục vụ:</strong> Nhận đặt in trực tiếp tại xưởng & giao hàng toàn quốc</li>
+                </ul>
+
+                <div class="contact-cta-buttons">
+                    <a href="tel:0773060379" class="btn-cta btn-call">📞 Gọi Ngay: 0773060379</a>
+                    <a href="https://zalo.me/0773060379" target="_blank" rel="noopener noreferrer" class="btn-cta btn-zalo">💬 Chat Zalo Tư Vấn</a>
+                </div>
+            </div>
+
+            <div class="map-frame-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.630108265115!2d107.33784218490565!3d10.762964132088419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175abd210cf041d%3A0x1ccc04e7cbf706b7!2zQ8ahIFPhu58gSW4gTmfhu41jIFRoxrDGoW5n!5e0!3m2!1svi!2s!4v1795617246342!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                    
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- 4. CHÂN TRANG (FOOTER PC) -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>🏠 NHÀ IN THIỆP CƯỚI NGỌC THƯƠNG</h3>
+                <p><strong>Cơ sở in:</strong> In ấn thiệp cưới cao cấp Ngọc Thương</p>
+                <p><strong>Địa chỉ xưởng:</strong> 135, Tổ 6 - Ấp 8 - Xuân Đông - Tp. Đồng Nai</p>
+            </div>
+            <div class="footer-col">
+                <h3>⏰ THỜI GIAN LÀM VIỆC</h3>
+                <p><strong>Tư vấn trực tiếp:</strong> 08:00 - 21:00 (Hàng ngày)</p>
+                <p><strong>Hỗ trợ trực tuyến:</strong> 24/7 qua Zalo / 0773060379</p>
+            </div>
+            <div class="footer-col">
+                <h3>🔗 CHÍNH SÁCH DỊCH VỤ</h3>
+                <ul class="footer-links">
+                    <li><a href="huong-dan-dat-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
+                    <li><a href="huong-dan-viet-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
+                    <li><a href="#">▶ Giao hàng tận nơi toàn quốc</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2026 Thiệp Cưới Ngọc Thương - Tinh Tế Trong Từng Đường Nét</p>
+        </div>
+    </footer>
+
+    <!-- FOOTER MOBILE -->
+    <div class="footer-mobile">
+        <h4>THIỆP CƯỚI NGỌC THƯƠNG</h4>
+        <p>📍 135, Tổ 6, Ấp 8, Xuân Đông, Tp. Đồng Nai</p>
+        <div class="footer-mobile-actions">
+            <a href="tel:0773060379">📞 Gọi Ngay</a>
+            <a href="https://zalo.me/0773060379" target="_blank">💬 Nhắn Zalo</a>
+        </div>
+        <div class="footer-mobile-copy">
+            © 2026 Thiệp Cưới Ngọc Thương
+        </div>
+    </div>
+
+    <!-- SCRIPT TÌM KIẾM DÙNG CHUNG -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchForm = document.getElementById("search-form");
+            const searchInput = document.getElementById("search-input");
+            const searchBtn = document.getElementById("search-btn");
+
+            function goSearch() {
+                if (!searchInput) return;
+                const code = searchInput.value.trim();
+                window.location.href = code
+                    ? `tim-kiem.html?code=${encodeURIComponent(code)}`
+                    : "tim-kiem.html";
+            }
+
+            if (searchForm) {
+                searchForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    goSearch();
+                });
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    goSearch();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

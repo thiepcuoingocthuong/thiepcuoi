@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Cưới Ngọc Thương</title>
+    <link rel="icon" type="image/png" href="anh/logo.png">
+    <style>
+        /* --- 1. CÀI ĐẶT CHUNG --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f6f9;
+            color: #333;
+        }
+
+        /* --- 2. PHẦN BANNER --- */
+        .banner {
+            position: relative;
+            width: 100%;
+        }
+
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            color: white;
+            text-align: center;
+        }
+
+        .banner-giua-trang1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .banner-giua-trang1 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .banner-search {
+            position: absolute;
+            top: 50%;
+            right: 50px;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .banner-search form {
+            display: flex;
+            align-items: center;
+            width: 260px;
+            height: 40px;
+            background: #fff;
+            border: 1px solid #ead4cc;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .banner-search input {
+            flex: 1;
+            min-width: 0;
+            height: 100%;
+            padding: 0 14px;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .banner-search button {
+            height: 100%;
+            padding: 0 13px;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .banner-search {
+                top: 8px;
+                right: 8px;
+            }
+            .banner-search form {
+                width: 190px;
+                height: 34px;
+            }
+        }
+
+        /* --- 3. THANH MENU NGANG DESKTOP --- */
+        .navbar {
+            background-color: #526456;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .main-menu {
+            list-style: none;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu-item a {
+            display: block;
+            color: #e5e7eb;
+            text-decoration: none;
+            padding: 18px 22px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .menu-item:hover > a {
+            background-color: #687b6c;
+            color: #ffffff;
+        }
+
+        /* DROPDOWN MENU */
+        .dropdown-menu {
+            list-style: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #526456;
+            min-width: 220px;
+            display: none;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .dropdown-menu a {
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #1a3038;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #687b6c;
+            padding-left: 25px;
+        }
+
+        .menu-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        .navbar-mobile, .banner-mobile, .footer-mobile { display: none !important; }
+
+        @media (max-width: 768px) {
+            .main-menu, .banner, .footer, .menu-item, .banner-search, .vung-chua-2-box { 
+                display: none !important; 
+            }
+
+            .navbar-mobile {
+                display: flex !important;
+                justify-content: space-around;
+                align-items: center;
+                background: #526456;
+                padding: 8px 5px;
+                position: sticky;
+                top: 0;
+                z-index: 999;
+            }
+
+            .navbar-mobile > a, 
+            .mobile-dropdown-btn {
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 14.5px;
+                cursor: pointer;
+                list-style: none;
+                user-select: none;
+            }
+
+            .mobile-dropdown-btn::-webkit-details-marker {
+                display: none;
+            }
+
+            .mobile-dropdown {
+                position: relative;
+            }
+
+            .mobile-dropdown-content {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #435247;
+                min-width: 200px;
+                box-shadow: 0px 8px 16px rgba(0,0,0,0.25);
+                border-radius: 6px;
+                margin-top: 8px;
+                overflow: hidden;
+                z-index: 1000;
+            }
+
+            .mobile-dropdown-content a {
+                color: #ffffff;
+                padding: 10px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: 13.5px;
+                font-weight: normal;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .mobile-dropdown-content a:last-child {
+                border-bottom: none;
+            }
+
+            .banner-mobile { display: block !important; width: 100%; margin-bottom: 10px; }
+            .banner-mobile img { width: 100%; height: auto; display: block; }
+
+            .footer-mobile {
+                display: block !important;
+                background: #526456;
+                color: #ffffff;
+                text-align: center;
+                padding: 25px 15px;
+                font-size: 13.5px;
+                line-height: 1.6;
+                margin-top: 30px;
+            }
+            .footer-mobile h4 { color: #ffffff; font-size: 15px; margin-bottom: 10px; text-transform: uppercase; }
+            .footer-mobile p { margin-bottom: 8px; }
+            .footer-mobile-actions { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
+            .footer-mobile-actions a {
+                background: #ffffff; color: #526456; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 13px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            .footer-mobile-copy { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 15px; padding-top: 12px; font-size: 12px; color: #bbb; }
+            footer { display: none !important; }
+        }
+
+        /* --- FOOTER DESKTOP --- */
+        footer {
+            background-color: #e0e1e0;
+            color: #000;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            padding: 40px 0 20px 0;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-col { flex: 1; min-width: 280px; margin-bottom: 30px; padding-right: 20px; }
+        .footer-col h3 { color: #000; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-col p { margin-bottom: 10px; }
+        .footer-links { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { color: #000; text-decoration: none; }
+        .footer-links a:hover { color: #03692a; }
+        .footer-copyright { text-align: center; border-top: 1px solid #bab6b6; margin-top: 20px; padding-top: 20px; font-size: 0.8rem; color: #000; width: 100%; }
+   
+        /* --- PHẦN CSS MỞ RỘNG (ĐÃ CẬP NHẬT TIÊU ĐỀ NẰM DƯỚI HÌNH) --- */
+        :root {
+            --primary-color: #526456;
+            --text-color: #333333;
+            --price-color: #d93838;
+            --gray-light: #f8f9fa;
+        }
+
+        section { padding: 30px 0; }
+        .section-title {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: var(--text-color);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* DANH MỤC 6 KHỐI: TIÊU ĐỀ NẰM DƯỚI HÌNH */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .cat-item {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        .cat-img-box {
+            width: 100%;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            background: var(--gray-light);
+        }
+        .cat-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .cat-item:hover .cat-img-box img {
+            transform: scale(1.06);
+        }
+        .cat-title-box {
+            padding: 14px;
+            text-align: center;
+            background: #fff;
+        }
+        .cat-title-box h3 {
+            color: #222;
+            font-size: 15px;
+            margin: 0;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* DANH MỤC MOBILE SLIDER */
+        .category-slider {
+            overflow-x: auto; scrollbar-width: none; padding-bottom: 10px;
+        }
+        .category-slider::-webkit-scrollbar { display: none; }
+        .slider-track { display: flex; gap: 15px; width: max-content; padding: 5px 0; }
+        .slide-item { text-decoration: none; text-align: center; width: 85px; }
+        .circle-img {
+            width: 70px; height: 70px; border-radius: 50%; overflow: hidden; margin: 0 auto 6px;
+            border: 2px solid var(--primary-color); box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        }
+        .circle-img img { width: 100%; height: 100%; object-fit: cover; }
+        .slide-item span { font-size: 11.5px; color: var(--text-color); display: block; font-weight: 500; }
+
+        /* TABS SẢN PHẨM */
+        .product-tabs {
+            display: flex; justify-content: center; gap: 15px; margin-bottom: 25px;
+            border-bottom: 2px solid #eeeeee; padding-bottom: 10px;
+        }
+        .tab-btn {
+            background: none; border: none; font-size: 15px; font-weight: bold; color: #888;
+            cursor: pointer; padding: 5px 12px; position: relative; transition: color 0.3s;
+        }
+        .tab-btn.active, .tab-btn:hover { color: var(--primary-color); }
+        .tab-btn.active::after {
+            content: ""; position: absolute; bottom: -12px; left: 0; width: 100%; height: 3px; background-color: var(--primary-color);
+        }
+
+        /* LƯỚI SẢN PHẨM */
+        .product-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+        }
+        .product-card {
+            background: #ffffff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;
+            display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); transform: translateY(-3px);
+        }
+        .prod-img-box {
+            position: relative; aspect-ratio: 1/1; overflow: hidden; background-color: var(--gray-light);
+        }
+        .prod-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .prod-info { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
+        .prod-code { font-size: 11px; color: #888; margin-bottom: 4px; font-weight: 500; }
+        .prod-title {
+            font-size: 13.5px; margin: 0 0 6px 0; line-height: 1.4; color: #222; height: 38px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .prod-rating { font-size: 11px; margin-bottom: 6px; }
+        .prod-price-box { margin-bottom: 12px; }
+        .price-current { font-size: 15px; font-weight: 700; color: var(--price-color); margin-right: 6px; }
+        .price-old { font-size: 12px; color: #aaa; text-decoration: line-through; }
+        .btn-detail {
+            display: block; text-align: center; border: 1px solid var(--primary-color); color: var(--primary-color);
+            text-decoration: none; padding: 7px; border-radius: 4px; font-size: 12.5px; font-weight: 600;
+            margin-top: auto; transition: all 0.3s ease;
+        }
+        .btn-detail:hover { background: var(--primary-color); color: #fff; }
+
+        .sale-badge::after {
+            content: attr(data-sale); position: absolute; top: 8px; left: 8px;
+            background: var(--price-color); color: #fff; font-size: 10.5px; padding: 2px 5px; border-radius: 3px; font-weight: bold;
+        }
+        .hot-badge::after {
+            content: "BÁN CHẠY"; position: absolute; top: 8px; left: 8px;
+            background: #ffb703; color: #fff; font-size: 10.5px; padding: 2px 5px; border-radius: 3px; font-weight: bold;
+        }
+        .new-badge::after {
+    content: attr(data-badge);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #1f7a4c;
+    color: #fff;
+    font-size: 10.5px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.prod-img-wrap {
+    position: relative;
+}
+
+.new-badge {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 68px;
+    height: 68px;
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-badge svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.22));
+}
+
+.new-badge span {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    transform: rotate(-10deg);
+    text-transform: uppercase;
+}
+        @media (min-width: 769px) { .mobile-only { display: none !important; } }
+        @media (max-width: 768px) {
+            .desktop-only { display: none !important; }
+            section { padding: 20px 0; }
+            .section-title { font-size: 18px; margin-bottom: 15px; }
+
+            .category-grid {grid-template-columns: repeat(3, 1fr);gap: 10px;}
+            .cat-title-box {padding: 8px 4px;}
+            .cat-title-box h3 { font-size: 11.5px;line-height: 1.3;}
+            
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .prod-info { padding: 8px; }
+            .prod-title { font-size: 12.5px; height: 35px; }
+            .price-current { font-size: 13.5px; }
+            .product-tabs { overflow-x: auto; justify-content: center; scrollbar-width: none;}
+            .product-tabs::-webkit-scrollbar { display: none !important; }
+            .tab-btn { font-size: 13px; white-space: nowrap; padding: 5px 8px; }
+        }
+           /* --- KHUNG BỌC CARD SẢN PHẨM --- */
+.product_noibat_item .pro-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #ece6e4;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(82, 100, 86, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.product_noibat_item .pro-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(106, 7, 22, 0.12);
+    border-color: #d8b4b8;
+}
+
+.product_noibat_item .img_pro {
+    border-radius: 7px;
+    margin-bottom: 10px;
+    background: #faf8f7;
+}
+
+.product_noibat_item .img_pro img {
+    height: 210px;
+}
+
+.product_noibat_item .pro-card:hover .img_pro img {
+    transform: scale(1.05);
+}
+
+.product_noibat_item h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    height: 39px;
+    overflow: hidden;
+}
+
+.product_noibat_item .box_price_box {
+    margin-top: auto;
+    padding-top: 6px;
+    border-top: 1px dashed #f0eaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.product_noibat_item .box_price_box strong {
+    color: #c82333;
+    font-size: 14.5px;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. BANNER CỬA HÀNG -->
+    <div class="banner-mobile">
+        <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Điện Thoại"></a>
+    </div>
+
+    <div class="banner">
+        <img src="anh/banner.png" alt="Banner">
+        <div class="banner-content">
+            <div class="banner-search">
+    <form id="search-form" action="index.html" method="get">
+        <input type="text" id="search-input" placeholder="Tìm mã thiệp" autocomplete="off">
+        <button type="submit" id="search-btn">🔍</button>
+    </form>
+</div>
+        </div>
+    </div>
+
+    <!-- 2. THANH MENU DESKTOP -->
+    <nav class="navbar">
+        <ul class="main-menu">
+            <li class="menu-item"><a href="index.html">Trang Chủ</a></li>
+            <li class="menu-item"><a href="gioi-thieu.html">Giới Thiệu</a></li>
+            <li class="menu-item">
+                <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Cưới ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="thiepcuoi-hiendai.html">Thiệp Cưới Hiện Đại</a></li>
+                    <li><a href="thiepcuoi-truyenthong.html">Thiệp Cưới Truyền Thống</a></li>
+                    <li><a href="thiepcuoi-docquyen.html">Thiệp Cưới Độc Quyền KTS</a></li>
+                    <li><a href="thiepcuoi-dq-25.html">Thiệp Cưới DQ_25</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="thiep-tangia.html">Thiệp Mời ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="thiep-tangia.html">Thiệp Tân Gia</a></li>
+                    <li><a href="thiep-sinhnhat.html">Thiệp Sinh Nhật</a></li>
+                    <li><a href="thiep-taon.html">Thiệp Công Giáo</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="thiepcuoi-online.html">Thiệp Cưới Online</a></li>
+            <li class="menu-item">
+                <a href="huong-dan-dat-thiep.html">Hướng Dẫn ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="huong-dan-dat-thiep.html">Hướng dẫn đặt thiệp</a></li>
+                    <li><a href="huong-dan-viet-thiep.html">Hướng dẫn viết thiệp cưới</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="lienhe.html">Liên Hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <nav class="navbar-mobile">
+        <details class="mobile-dropdown">
+            <summary class="mobile-dropdown-btn">Sản Phẩm ▾</summary>
+            <div class="mobile-dropdown-content">
+                <a href="index.html">📌 Tất Cả Mẫu Thiệp</a>
+                <a href="thiepcuoi-hiendai.html">Mẫu Thiệp Hiện Đại</a>
+                <a href="thiepcuoi-truyenthong.html">Mẫu Thiệp Truyền Thống</a>
+                <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Độc Quyền KTS</a>
+                <a href="thiepcuoi-dq-25.html">Mẫu Thiệp DQ_25</a>
+                <a href="thiep-tangia.html">Thiệp Tân Gia</a>
+                <a href="thiep-sinhnhat.html">Thiệp Sinh Nhật</a>
+                <a href="thiep-taon.html">Thiệp Công Giáo</a>
+            </div>
+        </details>
+        <a href="thiepcuoi-online.html">Thiệp Online</a>
+        <details class="mobile-dropdown">
+            <summary class="mobile-dropdown-btn">Hướng dẫn ▾</summary>
+            <div class="mobile-dropdown-content">
+                <a href="huong-dan-dat-thiep.html">Hướng dẫn đặt thiệp</a>
+                <a href="huong-dan-viet-thiep.html">Hướng dẫn viết thiệp cưới</a>
+            </div>
+        </details>
+        <a href="gioi-thieu.html">Giới Thiệu</a>
+    </nav>
+
+     <div class="vung-chua-2-box" style="max-width: 1200px; margin: 30px auto; padding: 0 15px; display: flex; gap: 10px;">
+        <div class="banner-giua-trang1">   
+            <img src="anh/banner-duoi2.png" alt="Biểu ngữ Giáo xứ">
+        </div>
+        <iframe src="box/menu-cot-phai.html" style="flex: 35; height: 330px; border: none; overflow: hidden;"></iframe>
+    </div>
+
+    <!-- PHẦN 1: KHỐI 6 DANH MỤC (HÌNH TRÊN, TIÊU ĐỀ DƯỚI) -->
+    <section class="category-section">
+        <div class="container">
+            <h2 class="section-title">Danh Mục Mẫu Thiệp</h2>
+            
+            <div class="category-grid">
+                <a href="thiepcuoi-hiendai.html" class="cat-item">
+                    <div class="cat-img-box"><img src="https://cdn.upanhlaylink.com/i/gwtOP3wo.jpg" alt="Thiệp cưới hiện đại"></div>
+                    <div class="cat-title-box"><h3>Thiệp Cưới Hiện Đại</h3></div>
+                </a>
+                <a href="thiepcuoi-truyenthong.html" class="cat-item">
+                    <div class="cat-img-box"><img src="https://cdn.upanhlaylink.com/i/MoqNfJpx.jpg" alt="Thiệp cưới truyền thống"></div>
+                    <div class="cat-title-box"><h3>Thiệp Cưới Truyền Thống</h3></div>
+                </a>
+                <a href="thiepcuoi-docquyen.html" class="cat-item">
+                    <div class="cat-img-box"><img src="https://thiepcuoihoanghaiyen.com/upload/sanpham/hhy6160-0025.jpg" alt="Thiệp cưới kỹ thuật số"></div>
+                    <div class="cat-title-box"><h3>Thiệp Cưới Độc Quyền KTS</h3></div>
+                </a>
+                <a href="thiep-tangia.html" class="cat-item">
+                    <div class="cat-img-box"><img src="https://thiepcuoihoanghaiyen.com/upload/sanpham/tg325-6425.jpg" alt="Thiệp tân gia"></div>
+                    <div class="cat-title-box"><h3>Thiệp Tân Gia</h3></div>
+                </a>
+                <a href="thiep-sinhnhat.html" class="cat-item">
+                    <div class="cat-img-box"><img src="https://thiepcuoihoanghaiyen.com/upload/sanpham/sn429-4414.jpg" alt="Thiệp sinh nhật"></div>
+                    <div class="cat-title-box"><h3>Thiệp Sinh Nhật</h3></div>
+                </a>
+                <a href="thiep-taon.html" class="cat-item">
+                    <div class="cat-img-box"><img src="thieptaon/to889.jpg" alt="Thiệp công giáo"></div>
+                    <div class="cat-title-box"><h3>Thiệp Công Giáo</h3></div>
+                </a>
+            </div>
+
+     
+    </section>
+
+
+    <!-- PHẦN 2: KHỐI DANH SÁCH SẢN PHẨM VỚI 3 TAB HOẠT ĐỘNG -->
+    <section class="product-section">
+        <div class="container">
+            <div class="product-tabs" id="productTabs">
+                <button class="tab-btn active" data-tab="best-seller">BÁN CHẠY </button>
+                <button class="tab-btn" data-tab="new-arrival">MẪU MỚI</button>
+                <button class="tab-btn" data-tab="on-sale">ĐANG GIẢM GIÁ</button>
+            </div>
+
+            <!-- Lưới hiển thị sản phẩm tương ứng theo Tab -->
+            <div class="product-grid" id="productGridContainer">
+                <!-- Sản phẩm sẽ được render tự động qua JavaScript -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-------------------------- 4. CHÂN TRANG (FOOTER) ------------------------>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>🏠 NHÀ IN THIỆP CƯỚI NGỌC THƯƠNG</h3>
+                <p><strong>Cơ sở in:</strong> In ấn thiệp cưới cao cấp Ngọc Thương</p>
+                <p><strong>Địa chỉ xưởng:</strong> 135, Tổ 6 - Ấp 8 - Xuân Đông - Tp. Đồng Nai</p>
+            </div>
+            <div class="footer-col">
+                <h3>⏰ THỜI GIAN LÀM VIỆC</h3>
+                <p><strong>Tư vấn trực tiếp:</strong> 08:00 - 21:00 (Hàng ngày)</p>
+                <p><strong>Hỗ trợ trực tuyến:</strong> 24/7 qua Zalo / 0773060379</p>
+            </div>
+            <div class="footer-col">
+                <h3>🔗 CHÍNH SÁCH DỊCH VỤ</h3>
+                <ul class="footer-links">
+                    <li><a href="huong-dan-dat-thiep.html"target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
+                    <li><a href="huong-dan-viet-thiep.html"target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
+                    <li><a href="#">▶ Giao hàng tận nơi toàn quốc</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2026 Thiệp Cưới Ngọc Thương - Tinh Tế Trong Từng Đường Nét</p>
+        </div>
+    </footer>
+
+    <!-- FOOTER MOBILE -->
+    <div class="footer-mobile">
+        <h4>THIỆP CƯỚI NGỌC THƯƠNG</h4>
+        <p>📍 135, Tổ 6, Ấp 8, Xuân Đông,Tp. Đồng Nai</p>
+        <div class="footer-mobile-actions">
+            <a href="tel:0773060379">📞 Gọi Ngay</a>
+            <a href="https://zalo.me/0773060379" target="_blank">💬 Nhắn Zalo</a>
+        </div>
+        <div class="footer-mobile-copy">
+            © 2026 Thiệp Cưới Ngọc Thương
+        </div>
+    </div>
+
+    <!-- SCRIPT XỬ LÝ 3 TAB VÀ CHUYỂN HƯỚNG SANG TRANG CHI TIẾT TRƯỚC KHI ĐẶT HÀNG -->
+     <script src="san-pham/data-trangchu.js"></script>
+    <script>
+        function renderProducts(tabKey) {
+            const container = document.getElementById("productGridContainer");
+            const items = tabProductsData[tabKey] || [];
+
+            container.innerHTML = items.map(item => `
+                <div class="product-card" onclick="goToDetailPage('${escapeHtml(item.title)}', '${escapeHtml(item.price)}', '${escapeHtml(item.img)}', '${escapeHtml(item.desc)}')">
+                    <div class="prod-img-box ${escapeHtml(item.badge || '')}" data-badge="${escapeHtml(item.badgeText || 'MỚI')}" ${item.badge === 'sale-badge' ? `data-sale="${escapeHtml(item.badgeText)}"` : ''}>
+                        <img src="${item.img}" alt="${escapeHtml(item.title)}">
+                    </div>
+                    <div class="prod-info">
+                        <span class="prod-code">Mã: ${escapeHtml(item.code)}</span>
+                        <h4 class="prod-title">${escapeHtml(item.title)}</h4>
+                        <div class="prod-rating">⭐⭐⭐⭐⭐</div>
+                        <div class="prod-price-box">
+                            <span class="price-current">${escapeHtml(item.price)}</span>
+                            ${item.oldPrice ? `<span class="price-old">${escapeHtml(item.oldPrice)}</span>` : ''}
+                        </div>
+                        <span class="btn-detail">Xem Chi Tiết</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function escapeHtml(str) {
+            return String(str).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+        }
+
+        // Khi click vào sản phẩm -> Lưu vào localStorage rồi chuyển sang trang CHI TIẾT
+        function goToDetailPage(name, price, img, desc) {
+            localStorage.setItem('clickProdName', name);
+            localStorage.setItem('clickProdPrice', price);
+            localStorage.setItem('clickProdImg', img);
+            localStorage.setItem('clickProdDesc', desc);
+
+            // Chuyển sang trang chi tiết (bạn có thể thay đổi tên file chi tiết tương ứng nếu cần)
+            window.location.href = "chi-tiet-trang-chu.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Hiển thị mặc định tab đầu tiên (Bán chạy nhất)
+            renderProducts("best-seller");
+
+            // Xử lý sự kiện bấm chuyển qua lại giữa 3 tab
+            const tabButtons = document.querySelectorAll(".tab-btn");
+            tabButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    tabButtons.forEach(btn => btn.classList.remove("active"));
+                    this.classList.add("active");
+                    const tabKey = this.getAttribute("data-tab");
+                    renderProducts(tabKey);
+                });
+            });
+        });
+
+        //----------------------------------
+
+        function createNewBadgeHtml(text) {
+    const label = escapeHtml((text || "NEW").trim() || "NEW");
+    const points = [];
+    const spikes = 20; // Số mũi nhọn xung quanh khung
+    const cx = 50, cy = 50;
+    const outerR = 48, innerR = 39;
+
+    for (let i = 0; i < spikes * 2; i++) {
+        const r = i % 2 === 0 ? outerR : innerR;
+        const angle = (Math.PI / spikes) * i - Math.PI / 2;
+        const x = (cx + r * Math.cos(angle)).toFixed(2);
+        const y = (cy + r * Math.sin(angle)).toFixed(2);
+        points.push(`${x},${y}`);
+    }
+
+    return `
+        <div class="new-badge" title="${label}">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+                <polygon points="${points.join(" ")}" fill="#177a3a"></polygon>
+            </svg>
+            <span>${label}</span>
+        </div>
+    `;
+}
+
+function renderProducts(tabKey) {
+    const container = document.getElementById("productGridContainer");
+    const items = tabProductsData[tabKey] || [];
+
+    container.innerHTML = items.map(item => {
+        const isNewBadge = item.badge === "new-badge";
+        const boxClass = isNewBadge ? "" : (item.badge || "");
+        const saleAttr = item.badge === "sale-badge" ? `data-sale="${escapeHtml(item.badgeText)}"` : "";
+
+        return `
+            <div class="product-card" onclick="goToDetailPage('${escapeHtml(item.title)}', '${escapeHtml(item.price)}', '${escapeHtml(item.img)}', '${escapeHtml(item.desc)}')">
+                <div class="prod-img-wrap">
+                    ${isNewBadge ? createNewBadgeHtml(item.badgeText) : ""}
+                    <div class="prod-img-box ${escapeHtml(boxClass)}" ${saleAttr}>
+                        <img src="${item.img}" alt="${escapeHtml(item.title)}">
+                    </div>
+                </div>
+                <div class="prod-info">
+                    <span class="prod-code">Mã: ${escapeHtml(item.code)}</span>
+                    <h4 class="prod-title">${escapeHtml(item.title)}</h4>
+                    <div class="prod-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="prod-price-box">
+                        <span class="price-current">${escapeHtml(item.price)}</span>
+                        ${item.oldPrice ? `<span class="price-old">${escapeHtml(item.oldPrice)}</span>` : ''}
+                    </div>
+                    <span class="btn-detail">Xem Chi Tiết</span>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+        //----HÀM TÌM KIẾM-----
+        document.addEventListener("DOMContentLoaded", function () {
+    const searchForm = document.getElementById("search-form");
+    const searchInput = document.getElementById("search-input");
+    const searchBtn = document.getElementById("search-btn");
+
+    function goSearch() {
+        if (!searchInput) return;
+        const code = searchInput.value.trim();
+        window.location.href = code
+            ? `tim-kiem.html?code=${encodeURIComponent(code)}`
+            : "tim-kiem.html";
+    }
+
+    if (searchForm) {
+        searchForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            goSearch();
+        });
+    }
+
+    if (searchBtn) {
+        searchBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            goSearch();
+        });
+    }
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thiepcuoingocthuong.com/sitemap.xml
