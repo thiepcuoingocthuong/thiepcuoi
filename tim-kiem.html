@@ -343,6 +343,51 @@
             color: #555;
             margin: 0 10px;
         }
+        
+                /* --- 6. UTILITY BAR (LƯỢT XEM & CHIA SẺ) --- */
+        .vung-tien-ich-bai-viet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0 15px 0;
+            padding-top: 15px;
+            border-top: 1px dashed #c8d6c9;
+            font-family: Arial, sans-serif;
+        }
+
+        .o-luot-xem {
+            font-size: 14px;
+            color: #555555;
+            font-weight: bold;
+        }
+        #so-luot-xem {
+            color: #115e07;
+        }
+
+        .nhom-nut-chia-se {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .nut-cs {
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 12.5px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .nut-cs:hover {
+            opacity: 0.9;
+        }
+
+        .nut-fb { background-color: #1877f2; }
+        .nut-zalo { background-color: #0068ff; }
 
         /* --- STYLE THANH PHÂN TRANG (PAGINATION) --- */
         .pagination-container {
@@ -552,22 +597,79 @@
                 color: #bbb;
             }
         }
+/*-------------------Thanh menu Mobile------------*/
+/* Mặc định ẩn trên PC */
+.mobile-search-bar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-search-bar {
+        display: block;
+        padding: 8px 15px 4px 15px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .mobile-search-bar form {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        background: #ffffff;
+        border: 1px solid #d8c4bc;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .mobile-search-bar input {
+        flex: 1;
+        min-width: 0;
+        height: 100%;
+        padding: 0 14px;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #333;
+        font-size: 14px;
+    }
+
+    .mobile-search-bar button {
+        height: 100%;
+        padding: 0 14px;
+        border: none;
+        background: #526456;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 15px;
+    }
+}
     </style>
 </head>
 <body>
 
-    <!-- 1. BANNER CỬA HÀNG -->
+    <!-- 1. BANNER MOBILE CỬA HÀNG -->
     <div class="banner-mobile">
         <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Điện Thoại"></a>
     </div>
 
+    <!-- THANH TÌM KIẾM RIÊNG CHO MOBILE -->
+    <div class="mobile-search-bar">
+        <form id="mobile-search-form" action="tim-kiem.html" method="get">
+            <input type="text" id="mobile-search-input" name="code" placeholder="Tìm mã hoặc tên thiệp..." autocomplete="off">
+            <button type="submit" id="mobile-search-btn">🔍</button>
+        </form>
+    </div>
+
+    <!-- 1. BANNER DESKTOP CỬA HÀNG -->
     <div class="banner">
-        <img src="anh/banner.png" alt="Banner">
+        <img src="anh/banner.png" alt="Nhà In Thiệp Cưới Ngọc Thương - Mẫu Thiệp Cưới Đẹp Tại Đồng Nai">
         <div class="banner-content">
             <div class="banner-search">
-                <form id="banner-search-form" action="tim-kiem.html" method="get">
-                    <input type="text" id="banner-search-input" name="code" placeholder="Tìm mã thiệp" autocomplete="off">
-                    <button type="submit">🔍</button>
+                <form id="search-form" action="tim-kiem.html" method="get">
+                    <input type="text" id="search-input" name="code" placeholder="Tìm mã hoặc tên thiệp..." autocomplete="off">
+                    <button type="submit" id="search-btn">🔍</button>
                 </form>
             </div>
         </div>
@@ -654,6 +756,18 @@
         <div class="pagination-container">
             <ul class="uk-pagination" id="pagination-list"></ul>
         </div>
+           <!-- UTILITY BAR (LƯỢT XEM & CHIA SẺ) -->
+        <div class="vung-tien-ich-bai-viet">
+            <div class="o-luot-xem">
+                👁️ Lượt xem: <span id="so-luot-xem">Đang tải...</span>
+            </div>
+
+            <div class="nhom-nut-chia-se">
+                <span>Chia sẻ bài viết:</span>
+                <button onclick="chiaSeFacebook()" class="nut-cs nut-fb">🔵 Facebook</button>
+                <button onclick="chiaSeZalo()" class="nut-cs nut-zalo">🟢 Zalo</button>
+            </div>
+        </div>
     </main>
 
     <!-- 4. CHÂN TRANG (FOOTER) -->
@@ -674,7 +788,7 @@
                 <ul class="footer-links">
                     <li><a href="huong-dan-dat-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
                     <li><a href="huong-dan-viet-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
-                    <li><a href="#">▶ Giao hàng tận nơi toàn quốc</a></li>
+                    <li><a href="gioi-thieu.html" target="_blank" rel="noopener noreferrer">▶ Giao hàng tận nơi toàn quốc</a></li>
                 </ul>
             </div>
         </div>
@@ -894,6 +1008,87 @@
                 }
             });
         });
+           // 5. Chia sẻ Facebook & Zalo (lấy link hiện tại động)
+        function chiaSeFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open("https://www.facebook.com/sharer/sharer.php?u=" + url, "_blank", "noopener,noreferrer");
+        }
+
+        function chiaSeZalo() {
+            const url = encodeURIComponent(window.location.href);
+            window.open("https://zalo.me/share?url=" + url, "_blank", "noopener,noreferrer");
+        }
+    </script>
+     <!-- 6. ĐẾM LƯỢT XEM CHUNG BẰNG CLOUD FIRESTORE (CÁCH B) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import {
+            getFirestore,
+            doc,
+            getDoc,
+            setDoc,
+            updateDoc,
+            increment,
+            serverTimestamp
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Thay bằng cấu hình Firebase thực tế của dự án bạn
+     const firebaseConfig = {
+  apiKey: "AIzaSyBdFVN7qwuxgkiHo9Fejr4K7pLceEu6gh4",
+  authDomain: "quan-ly-san-pham-55ec5.firebaseapp.com",
+  projectId: "quan-ly-san-pham-55ec5",
+  storageBucket: "quan-ly-san-pham-55ec5.firebasestorage.app",
+  messagingSenderId: "845660088489",
+  appId: "1:845660088489:web:49635a861acff93c6a21b8"
+};
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const maBaiViet = "trang-tim-kiem"; // Đổi mã riêng cho từng trang khi nhân bản
+        const viewEl = document.getElementById("so-luot-xem");
+        const docRef = doc(db, "page_views", maBaiViet);
+
+        const sessionKey = "viewed_session_" + maBaiViet;
+        const daDemTrongPhien = sessionStorage.getItem(sessionKey) === "1";
+
+        async function capNhatVaHienThiLuotXem() {
+            try {
+                const snap = await getDoc(docRef);
+
+                if (!snap.exists()) {
+                    const initialCount = 121;
+                    await setDoc(docRef, {
+                        count: initialCount,
+                        updatedAt: serverTimestamp()
+                    });
+                    sessionStorage.setItem(sessionKey, "1");
+                    if (viewEl) viewEl.textContent = initialCount.toLocaleString("vi-VN");
+                    return;
+                }
+
+                let currentCount = Number(snap.data().count || 0);
+
+                if (!daDemTrongPhien) {
+                    await updateDoc(docRef, {
+                        count: increment(1),
+                        updatedAt: serverTimestamp()
+                    });
+                    sessionStorage.setItem(sessionKey, "1");
+                    currentCount += 1;
+                }
+
+                if (viewEl) {
+                    viewEl.textContent = currentCount.toLocaleString("vi-VN");
+                }
+            } catch (err) {
+                console.error("Lỗi cập nhật lượt xem Firestore:", err);
+                if (viewEl) viewEl.textContent = "—";
+            }
+        }
+
+        capNhatVaHienThiLuotXem();
     </script>
 </body>
 </html>
+

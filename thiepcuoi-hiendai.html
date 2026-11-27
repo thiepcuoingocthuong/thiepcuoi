@@ -21,7 +21,7 @@
             color: #333;
         }
 
-        /* --- 2. PHẦN BANNER --- */
+        /* --- 2. PHẦN BANNER & TÌM KIẾM --- */
         .banner {
             position: relative;
             width: 100%;
@@ -85,7 +85,7 @@
             font-size: 16px;
         }
 
-        /* --- 3. THANH MENU NGANG --- */
+        /* --- 3. THANH MENU NGANG DESKTOP --- */
         .navbar {
             background-color: #526456;
             position: sticky;
@@ -146,29 +146,36 @@
             display: block;
         }
 
+        /* --- 4. TIÊU ĐỀ DANH MỤC & KHU VỰC SẢN PHẨM --- */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
         .cum-tieu-de-danh-muc {
             max-width: 1200px;
-            margin: 30px auto 25px auto;
-            padding: 0 15px;
+            margin: 0 auto 25px auto;
             width: 100%;
             box-sizing: border-box;
         }
 
         .cum-tieu-de-danh-muc h1 {
+            text-align: left;
+            color: #6a0716;
+            font-size: 24px;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 24px;
-            color: #6a0716;
             margin: 0;
             padding-bottom: 10px;
             border-bottom: 2px solid currentColor;
         }
 
-        /* --- 4. KHU VỰC SẢN PHẨM --- */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 15px;
+        .cum-tieu-de-danh-muc .mo-ta-danh-muc {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
         }
 
         .product_noibat_box {
@@ -270,12 +277,51 @@
 
         .product_noibat_item .box_price_box strong {
             color: #c82333;
-            font-weight: bold;
             font-size: 14.5px;
+            font-weight: bold;
             margin: 0;
         }
 
-        /* --- 5. UTILITY BAR (LƯỢT XEM & CHIA SẺ) --- */
+        /* --- 5. PHÂN TRANG (PAGINATION) --- */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .uk-pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            gap: 8px;
+        }
+
+        .uk-pagination li a {
+            display: block;
+            padding: 8px 14px;
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .uk-pagination li a:hover {
+            background: #526456;
+            color: #fff;
+            border-color: #526456;
+        }
+
+        .uk-pagination li a.active {
+            background: #6a0716;
+            color: #fff;
+            border-color: #6a0716;
+        }
+
+        /* --- 6. UTILITY BAR (LƯỢT XEM & CHIA SẺ) --- */
         .vung-tien-ich-bai-viet {
             display: flex;
             justify-content: space-between;
@@ -324,46 +370,7 @@
         .nut-fb { background-color: #1877f2; }
         .nut-zalo { background-color: #0068ff; }
 
-        /* --- 6. THANH PHÂN TRANG (PAGINATION) --- */
-        .pagination-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-            margin-bottom: 20px;
-        }
-
-        .uk-pagination {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            gap: 8px;
-        }
-
-        .uk-pagination li a {
-            display: block;
-            padding: 8px 14px;
-            border: 1px solid #ddd;
-            background: #fff;
-            color: #333;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .uk-pagination li a:hover {
-            background: #526456;
-            color: #fff;
-            border-color: #526456;
-        }
-
-        .uk-pagination li a.active {
-            background: #6a0716;
-            color: #fff;
-            border-color: #6a0716;
-        }
-
-        /* --- 7. FOOTER PC --- */
+        /* --- 7. CHÂN TRANG DESKTOP (FOOTER) --- */
         footer {
             background-color: #e0e1e0;
             color: #000;
@@ -392,6 +399,7 @@
         .footer-links a:hover { color: #03692a; }
         .footer-copyright { text-align: center; border-top: 1px solid #bab6b6; margin-top: 20px; padding-top: 20px; font-size: 0.8rem; color: #000; width: 100%; }
 
+        /* --- 8. GIAO DIỆN MOBILE (MẶC ĐỊNH ẨN TRÊN PC) --- */
         .navbar-mobile,
         .banner-mobile,
         .footer-mobile,
@@ -399,19 +407,72 @@
             display: none;
         }
 
-        /* --- 8. RESPONSIVE --- */
         @media (max-width: 992px) {
             .product_noibat_item { width: 33.333%; }
         }
 
         @media (max-width: 768px) {
             .product_noibat_item { width: 50%; }
-            .main-menu, .navbar, .banner, footer, .menu-item, .banner-search, .vung-chua-2-box {
+
+            /* Ẩn giao diện PC */
+            .main-menu, .navbar, .banner, footer, .menu-item, .banner-search {
                 display: none !important;
             }
 
+            /* Banner Mobile */
+            .banner-mobile {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .banner-mobile img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            /* Thanh tìm kiếm Mobile */
+            .mobile-search-bar {
+                display: block;
+                padding: 8px 15px 4px 15px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .mobile-search-bar form {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                background: #ffffff;
+                border: 1px solid #d8c4bc;
+                border-radius: 22px;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            }
+            .mobile-search-bar input {
+                flex: 1;
+                min-width: 0;
+                height: 100%;
+                padding: 0 14px;
+                border: none;
+                outline: none;
+                background: transparent;
+                color: #333;
+                font-size: 14px;
+            }
+            .mobile-search-bar button {
+                height: 100%;
+                padding: 0 14px;
+                border: none;
+                background: #526456;
+                color: #ffffff;
+                cursor: pointer;
+                font-size: 15px;
+            }
+
+            /* Menu Mobile */
             .navbar-mobile {
-                display: flex !important;
+                display: flex;
                 justify-content: space-around;
                 align-items: center;
                 background: #526456;
@@ -420,7 +481,6 @@
                 top: 0;
                 z-index: 999;
             }
-
             .navbar-mobile > a,
             .mobile-dropdown-btn {
                 color: #ffffff;
@@ -431,15 +491,12 @@
                 list-style: none;
                 user-select: none;
             }
-
             .mobile-dropdown-btn::-webkit-details-marker {
                 display: none;
             }
-
             .mobile-dropdown {
                 position: relative;
             }
-
             .mobile-dropdown-content {
                 position: absolute;
                 top: 100%;
@@ -452,7 +509,6 @@
                 overflow: hidden;
                 z-index: 1000;
             }
-
             .mobile-dropdown-content a {
                 color: #ffffff;
                 padding: 10px 16px;
@@ -462,70 +518,16 @@
                 font-weight: normal;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             }
-
             .mobile-dropdown-content a:last-child {
                 border-bottom: none;
             }
-
             .mobile-dropdown-content a:active {
                 background-color: #687b6c;
             }
 
-            .banner-mobile {
-                display: block !important;
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            .banner-mobile img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            .mobile-search-bar {
-                display: block !important;
-                padding: 8px 15px 4px 15px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .mobile-search-bar form {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                height: 40px;
-                background: #ffffff;
-                border: 1px solid #d8c4bc;
-                border-radius: 22px;
-                overflow: hidden;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-            }
-
-            .mobile-search-bar input {
-                flex: 1;
-                min-width: 0;
-                height: 100%;
-                padding: 0 14px;
-                border: none;
-                outline: none;
-                background: transparent;
-                color: #333;
-                font-size: 14px;
-            }
-
-            .mobile-search-bar button {
-                height: 100%;
-                padding: 0 14px;
-                border: none;
-                background: #526456;
-                color: #ffffff;
-                cursor: pointer;
-                font-size: 15px;
-            }
-
+            /* Footer Mobile */
             .footer-mobile {
-                display: block !important;
+                display: block;
                 background: #526456;
                 color: #ffffff;
                 text-align: center;
@@ -534,25 +536,21 @@
                 line-height: 1.6;
                 margin-top: 30px;
             }
-
             .footer-mobile h4 {
                 color: #ffffff;
                 font-size: 15px;
                 margin-bottom: 10px;
                 text-transform: uppercase;
             }
-
             .footer-mobile p {
                 margin-bottom: 8px;
             }
-
             .footer-mobile-actions {
                 display: flex;
                 justify-content: center;
                 gap: 15px;
                 margin: 15px 0;
             }
-
             .footer-mobile-actions a {
                 background: #ffffff;
                 color: #526456;
@@ -563,7 +561,6 @@
                 font-size: 13px;
                 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             }
-
             .footer-mobile-copy {
                 border-top: 1px solid rgba(255,255,255,0.1);
                 margin-top: 15px;
@@ -578,10 +575,10 @@
 
     <!-- 1. BANNER MOBILE CỬA HÀNG -->
     <div class="banner-mobile">
-        <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Thiệp Cưới Ngọc Thương Mobile"></a>
+        <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Điện Thoại"></a>
     </div>
 
-    <!-- THANH TÌM KIẾM MOBILE -->
+    <!-- THANH TÌM KIẾM RIÊNG CHO MOBILE -->
     <div class="mobile-search-bar">
         <form id="mobile-search-form" action="tim-kiem.html" method="get">
             <input type="text" id="mobile-search-input" name="code" placeholder="Tìm mã hoặc tên thiệp..." autocomplete="off">
@@ -661,14 +658,14 @@
         </details>
         <a href="gioi-thieu.html">Giới Thiệu</a>
     </nav>
-
     <!-- 3. KHU VỰC SẢN PHẨM & PHÂN TRANG -->
     <main class="container">
-        <div class="cum-tieu-de-danh-muc">
-            <h1>THIỆP CƯỚI HIỆN ĐẠI - KTS</h1>
-        </div>
 
-        <!-- KHUNG CHỨA SẢN PHẨM SẼ ĐƯỢC JAVASCRIPT TỰ ĐỘNG ĐỔ VÀO ĐÂY -->
+     <div class="cum-tieu-de-danh-muc">
+    <h1 style="text-align: left; color: #6a0716; font-size: 24px;">THIỆP CƯỚI HIỆN ĐẠI - KTS</h1>
+    </div>
+
+         <!-- KHUNG CHỨA SẢN PHẨM SẼ ĐƯỢC JAVASCRIPT TỰ ĐỘNG ĐỔ VÀO ĐÂY -->
         <div class="product_noibat_box" id="product-list"></div>
 
         <!-- KHU VỰC HIỂN THỊ NÚT CHUYỂN TRANG -->
@@ -676,7 +673,7 @@
             <ul class="uk-pagination" id="pagination-list"></ul>
         </div>
 
-        <!-- UTILITY BAR (LƯỢT XEM & CHIA SẺ) -->
+               <!-- UTILITY BAR (LƯỢT XEM & CHIA SẺ) -->
         <div class="vung-tien-ich-bai-viet">
             <div class="o-luot-xem">
                 👁️ Lượt xem: <span id="so-luot-xem">Đang tải...</span>
@@ -684,13 +681,14 @@
 
             <div class="nhom-nut-chia-se">
                 <span>Chia sẻ bài viết:</span>
-                <button type="button" onclick="chiaSeFacebook()" class="nut-cs nut-fb">🔵 Facebook</button>
-                <button type="button" onclick="chiaSeZalo()" class="nut-cs nut-zalo">🟢 Zalo</button>
+                <button onclick="chiaSeFacebook()" class="nut-cs nut-fb">🔵 Facebook</button>
+                <button onclick="chiaSeZalo()" class="nut-cs nut-zalo">🟢 Zalo</button>
             </div>
         </div>
+
     </main>
 
-    <!-- 4. CHÂN TRANG (FOOTER) -->
+    <!-------------------------- 4. CHÂN TRANG (FOOTER) ------------------------>
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -705,10 +703,10 @@
             </div>
             <div class="footer-col">
                 <h3>🔗 CHÍNH SÁCH DỊCH VỤ</h3>
-                <ul class="footer-links">
+               <ul class="footer-links">
                     <li><a href="huong-dan-dat-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
                     <li><a href="huong-dan-viet-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
-                    <li><a href="#">▶ Giao hàng tận nơi toàn quốc</a></li>
+                    <li><a href="gioi-thieu.html" target="_blank" rel="noopener noreferrer">▶ Giao hàng tận nơi toàn quốc</a></li>
                 </ul>
             </div>
         </div>
@@ -720,35 +718,37 @@
     <!-- FOOTER MOBILE -->
     <div class="footer-mobile">
         <h4>THIỆP CƯỚI NGỌC THƯƠNG</h4>
-        <p>📍 135, Tổ 6, Ấp 8, Xuân Đông, Tp. Đồng Nai</p>
+        <p>📍 135, Tổ 6, Ấp 8, Xuân Đông,Tp. Đồng Nai</p>
         <div class="footer-mobile-actions">
             <a href="tel:0773060379">📞 Gọi Ngay</a>
-            <a href="https://zalo.me/0773060379" target="_blank" rel="noopener noreferrer">💬 Nhắn Zalo</a>
+            <a href="https://zalo.me/0773060379" target="_blank">💬 Nhắn Zalo</a>
         </div>
         <div class="footer-mobile-copy">
             © 2026 Thiệp Cưới Ngọc Thương
         </div>
     </div>
-
     <script src="san-pham/data-hiendai.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // 1. Render danh sách sản phẩm từ data-hiendai.js
+            // 👇 THAY 'docQuyenProducts' THÀNH TÊN BIẾN MỚI 'hienDaiProducts'
             const itemsData = typeof hienDaiProducts !== 'undefined' ? hienDaiProducts : [];
+            
             const productListContainer = document.getElementById("product-list");
             const paginationList = document.getElementById("pagination-list");
 
-            if (productListContainer && itemsData.length > 0) {
-                productListContainer.innerHTML = itemsData.map(item => `
-                    <div class="product_noibat_item" data-code="${item.code || ''}" data-description="${item.desc || ''}">
-                        <div class="pro-card">
-                            <a class="img_pro" href="${item.detailUrl}"><img src="${item.image}" alt="${item.name}"></a>
-                            <h3><a href="${item.detailUrl}" class="text-split">${item.name}</a></h3>
-                            <div class="box_price_box"><strong>${item.price}</strong></div>
-                        </div>
-                    </div>
-                `).join('');
-            }
+       
+           
+          if (productListContainer && itemsData.length > 0) {
+    productListContainer.innerHTML = itemsData.map(item => `
+        <div class="product_noibat_item" data-description="${item.desc}">
+            <div class="pro-card">
+                <a class="img_pro" href="${item.detailUrl}"><img src="${item.image}" alt="${item.name}"></a>
+                <h3><a href="${item.detailUrl}" class="text-split">${item.name}</a></h3>
+                <div class="box_price_box"><strong>${item.price}</strong></div>
+            </div>
+        </div>
+    `).join('');
+}
 
             // 2. Xử lý phân trang (20 sản phẩm/trang)
             const itemsPerPage = 20;
@@ -781,7 +781,7 @@
                 document.querySelectorAll("#pagination-list a").forEach(link => {
                     link.addEventListener("click", function (e) {
                         e.preventDefault();
-                        let pageNum = parseInt(this.getAttribute("data-page"), 10);
+                        let pageNum = parseInt(this.getAttribute("data-page"));
                         showPage(pageNum);
                         document.querySelector('.cum-tieu-de-danh-muc').scrollIntoView({ behavior: 'smooth' });
                     });
@@ -792,7 +792,7 @@
                 showPage(1);
             }
 
-            // 3. Lưu LocalStorage khi click xem chi tiết sản phẩm
+     // 3. Lưu LocalStorage khi click xem chi tiết sản phẩm
             document.body.addEventListener('click', function (e) {
                 const item = e.target.closest('.product_noibat_item');
                 if (item) {
