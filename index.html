@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiệp Cưới Ngọc Thương</title>
+    <title>Thiệp Cưới Ngọc Thương - In Thiệp Cưới Đẹp, Hiện Đại Tại Đồng Nai</title>
+    <meta name="description" content="Nhà In Thiệp Cưới Ngọc Thương tại Đồng Nai: chuyên thiệp cưới hiện đại, truyền thống, thiệp mời sự kiện và tặng thiệp cưới online. Giao hàng toàn quốc.">
+    <link rel="canonical" href="https://thiepcuoingocthuong.com/">
     <link rel="icon" type="image/png" href="anh/logo.png">
     <style>
         /* --- 1. CÀI ĐẶT CHUNG --- */
@@ -95,6 +97,7 @@
             padding: 0 13px;
             border: none;
             background: #fff;
+            color: #526456;
             cursor: pointer;
             font-size: 16px;
         }
@@ -145,7 +148,6 @@
             color: #ffffff;
         }
 
-        /* DROPDOWN MENU */
         .dropdown-menu {
             list-style: none;
             position: absolute;
@@ -182,8 +184,8 @@
         .navbar-mobile, .banner-mobile, .footer-mobile { display: none !important; }
 
         @media (max-width: 768px) {
-            .main-menu, .banner, .footer, .menu-item, .banner-search, .vung-chua-2-box { 
-                display: none !important; 
+            .main-menu, .navbar, .banner, footer, .menu-item, .banner-search, .vung-chua-2-box {
+                display: none !important;
             }
 
             .navbar-mobile {
@@ -197,7 +199,7 @@
                 z-index: 999;
             }
 
-            .navbar-mobile > a, 
+            .navbar-mobile > a,
             .mobile-dropdown-btn {
                 color: #ffffff;
                 text-decoration: none;
@@ -293,8 +295,8 @@
         .footer-links a { color: #000; text-decoration: none; }
         .footer-links a:hover { color: #03692a; }
         .footer-copyright { text-align: center; border-top: 1px solid #bab6b6; margin-top: 20px; padding-top: 20px; font-size: 0.8rem; color: #000; width: 100%; }
-   
-        /* --- PHẦN CSS MỞ RỘNG (ĐÃ CẬP NHẬT TIÊU ĐỀ NẰM DƯỚI HÌNH) --- */
+
+        /* --- PHẦN CSS MỞ RỘNG --- */
         :root {
             --primary-color: #526456;
             --text-color: #333333;
@@ -312,7 +314,6 @@
             font-weight: 700;
         }
 
-        /* DANH MỤC 6 KHỐI: TIÊU ĐỀ NẰM DƯỚI HÌNH */
         .category-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -360,21 +361,6 @@
             text-transform: uppercase;
         }
 
-        /* DANH MỤC MOBILE SLIDER */
-        .category-slider {
-            overflow-x: auto; scrollbar-width: none; padding-bottom: 10px;
-        }
-        .category-slider::-webkit-scrollbar { display: none; }
-        .slider-track { display: flex; gap: 15px; width: max-content; padding: 5px 0; }
-        .slide-item { text-decoration: none; text-align: center; width: 85px; }
-        .circle-img {
-            width: 70px; height: 70px; border-radius: 50%; overflow: hidden; margin: 0 auto 6px;
-            border: 2px solid var(--primary-color); box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-        }
-        .circle-img img { width: 100%; height: 100%; object-fit: cover; }
-        .slide-item span { font-size: 11.5px; color: var(--text-color); display: block; font-weight: 500; }
-
-        /* TABS SẢN PHẨM */
         .product-tabs {
             display: flex; justify-content: center; gap: 15px; margin-bottom: 25px;
             border-bottom: 2px solid #eeeeee; padding-bottom: 10px;
@@ -388,7 +374,6 @@
             content: ""; position: absolute; bottom: -12px; left: 0; width: 100%; height: 3px; background-color: var(--primary-color);
         }
 
-        /* LƯỚI SẢN PHẨM */
         .product-grid {
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
         }
@@ -429,146 +414,184 @@
             content: "BÁN CHẠY"; position: absolute; top: 8px; left: 8px;
             background: #ffb703; color: #fff; font-size: 10.5px; padding: 2px 5px; border-radius: 3px; font-weight: bold;
         }
-        .new-badge::after {
-    content: attr(data-badge);
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background: #1f7a4c;
-    color: #fff;
-    font-size: 10.5px;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-weight: bold;
-}
-.prod-img-wrap {
-    position: relative;
-}
+        .prod-img-wrap {
+            position: relative;
+        }
 
-.new-badge {
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    width: 68px;
-    height: 68px;
-    z-index: 5;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .new-badge {
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            width: 68px;
+            height: 68px;
+            z-index: 5;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.new-badge svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.22));
-}
+        .new-badge svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.22));
+        }
 
-.new-badge span {
-    position: relative;
-    z-index: 2;
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 0.4px;
-    transform: rotate(-10deg);
-    text-transform: uppercase;
-}
+        .new-badge span {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            transform: rotate(-10deg);
+            text-transform: uppercase;
+        }
+
         @media (min-width: 769px) { .mobile-only { display: none !important; } }
         @media (max-width: 768px) {
             .desktop-only { display: none !important; }
             section { padding: 20px 0; }
             .section-title { font-size: 18px; margin-bottom: 15px; }
 
-            .category-grid {grid-template-columns: repeat(3, 1fr);gap: 10px;}
-            .cat-title-box {padding: 8px 4px;}
-            .cat-title-box h3 { font-size: 11.5px;line-height: 1.3;}
-            
+            .category-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .cat-title-box { padding: 8px 4px; }
+            .cat-title-box h3 { font-size: 11.5px; line-height: 1.3; }
+
             .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .prod-info { padding: 8px; }
             .prod-title { font-size: 12.5px; height: 35px; }
             .price-current { font-size: 13.5px; }
-            .product-tabs { overflow-x: auto; justify-content: center; scrollbar-width: none;}
+            .product-tabs { overflow-x: auto; justify-content: center; scrollbar-width: none; }
             .product-tabs::-webkit-scrollbar { display: none !important; }
             .tab-btn { font-size: 13px; white-space: nowrap; padding: 5px 8px; }
         }
-           /* --- KHUNG BỌC CARD SẢN PHẨM --- */
-.product_noibat_item .pro-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: #ffffff;
-    border: 1px solid #ece6e4;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 8px rgba(82, 100, 86, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
 
-.product_noibat_item .pro-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(106, 7, 22, 0.12);
-    border-color: #d8b4b8;
-}
+        /* --- THANH TÌM KIẾM MOBILE --- */
+        .mobile-search-bar {
+            display: none;
+        }
 
-.product_noibat_item .img_pro {
-    border-radius: 7px;
-    margin-bottom: 10px;
-    background: #faf8f7;
-}
+        @media (max-width: 768px) {
+            .mobile-search-bar {
+                display: block;
+                padding: 8px 15px 4px 15px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
 
-.product_noibat_item .img_pro img {
-    height: 210px;
-}
+            .mobile-search-bar form {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                background: #ffffff;
+                border: 1px solid #d8c4bc;
+                border-radius: 22px;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            }
 
-.product_noibat_item .pro-card:hover .img_pro img {
-    transform: scale(1.05);
-}
+            .mobile-search-bar input {
+                flex: 1;
+                min-width: 0;
+                height: 100%;
+                padding: 0 14px;
+                border: none;
+                outline: none;
+                background: transparent;
+                color: #333;
+                font-size: 14px;
+            }
 
-.product_noibat_item h3 {
-    margin: 0 0 8px 0;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4;
-    height: 39px;
-    overflow: hidden;
-}
+            .mobile-search-bar button {
+                height: 100%;
+                padding: 0 14px;
+                border: none;
+                background: #526456;
+                color: #ffffff;
+                cursor: pointer;
+                font-size: 15px;
+            }
+        }
 
-.product_noibat_item .box_price_box {
-    margin-top: auto;
-    padding-top: 6px;
-    border-top: 1px dashed #f0eaea;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-}
+        /* --- UTILITY BAR (LƯỢT TRUY CẬP & CHIA SẺ) --- */
+        .vung-tien-ich-bai-viet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0 15px 0;
+            padding-top: 15px;
+            border-top: 1px dashed #c8d6c9;
+            font-family: Arial, sans-serif;
+        }
 
-.product_noibat_item .box_price_box strong {
-    color: #c82333;
-    font-size: 14.5px;
-}
+        .o-luot-xem {
+            font-size: 14px;
+            color: #555555;
+            font-weight: bold;
+        }
+
+        #so-luot-xem {
+            color: #115e07;
+        }
+
+        .nhom-nut-chia-se {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .nut-cs {
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 12.5px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .nut-cs:hover {
+            opacity: 0.9;
+        }
+
+        .nut-fb { background-color: #1877f2; }
+        .nut-zalo { background-color: #0068ff; }
     </style>
 </head>
-
 <body>
 
-    <!-- 1. BANNER CỬA HÀNG -->
+    <!-- 1. BANNER MOBILE CỬA HÀNG -->
     <div class="banner-mobile">
         <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Điện Thoại"></a>
     </div>
 
+    <!-- THANH TÌM KIẾM RIÊNG CHO MOBILE -->
+    <div class="mobile-search-bar">
+        <form id="mobile-search-form" action="tim-kiem.html" method="get">
+            <input type="text" id="mobile-search-input" name="code" placeholder="Tìm mã hoặc tên thiệp..." autocomplete="off">
+            <button type="submit" id="mobile-search-btn">🔍</button>
+        </form>
+    </div>
+
+    <!-- 1. BANNER DESKTOP CỬA HÀNG -->
     <div class="banner">
-        <img src="anh/banner.png" alt="Banner">
+        <img src="anh/banner.png" alt="Nhà In Thiệp Cưới Ngọc Thương - Mẫu Thiệp Cưới Đẹp Tại Đồng Nai">
         <div class="banner-content">
             <div class="banner-search">
-    <form id="search-form" action="index.html" method="get">
-        <input type="text" id="search-input" placeholder="Tìm mã thiệp" autocomplete="off">
-        <button type="submit" id="search-btn">🔍</button>
-    </form>
-</div>
+                <form id="search-form" action="tim-kiem.html" method="get">
+                    <input type="text" id="search-input" name="code" placeholder="Tìm mã hoặc tên thiệp..." autocomplete="off">
+                    <button type="submit" id="search-btn">🔍</button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -632,18 +655,18 @@
         <a href="gioi-thieu.html">Giới Thiệu</a>
     </nav>
 
-     <div class="vung-chua-2-box" style="max-width: 1200px; margin: 30px auto; padding: 0 15px; display: flex; gap: 10px;">
-        <div class="banner-giua-trang1">   
-            <img src="anh/banner-duoi2.png" alt="Biểu ngữ Giáo xứ">
+    <div class="vung-chua-2-box" style="max-width: 1200px; margin: 30px auto; padding: 0 15px; display: flex; gap: 10px;">
+        <div class="banner-giua-trang1">
+            <img src="anh/banner-duoi2.png" alt="Biểu ngữ Thiệp Cưới Ngọc Thương">
         </div>
         <iframe src="box/menu-cot-phai.html" style="flex: 35; height: 330px; border: none; overflow: hidden;"></iframe>
     </div>
 
-    <!-- PHẦN 1: KHỐI 6 DANH MỤC (HÌNH TRÊN, TIÊU ĐỀ DƯỚI) -->
+    <!-- PHẦN 1: KHỐI 6 DANH MỤC -->
     <section class="category-section">
         <div class="container">
             <h2 class="section-title">Danh Mục Mẫu Thiệp</h2>
-            
+
             <div class="category-grid">
                 <a href="thiepcuoi-hiendai.html" class="cat-item">
                     <div class="cat-img-box"><img src="https://cdn.upanhlaylink.com/i/gwtOP3wo.jpg" alt="Thiệp cưới hiện đại"></div>
@@ -670,29 +693,36 @@
                     <div class="cat-title-box"><h3>Thiệp Công Giáo</h3></div>
                 </a>
             </div>
-
-     
+        </div>
     </section>
-
 
     <!-- PHẦN 2: KHỐI DANH SÁCH SẢN PHẨM VỚI 3 TAB HOẠT ĐỘNG -->
     <section class="product-section">
         <div class="container">
             <div class="product-tabs" id="productTabs">
-                <button class="tab-btn active" data-tab="best-seller">BÁN CHẠY </button>
-                <button class="tab-btn" data-tab="new-arrival">MẪU MỚI</button>
-                <button class="tab-btn" data-tab="on-sale">ĐANG GIẢM GIÁ</button>
+                <button type="button" class="tab-btn active" data-tab="best-seller">BÁN CHẠY</button>
+                <button type="button" class="tab-btn" data-tab="new-arrival">MẪU MỚI</button>
+                <button type="button" class="tab-btn" data-tab="on-sale">ĐANG GIẢM GIÁ</button>
             </div>
 
             <!-- Lưới hiển thị sản phẩm tương ứng theo Tab -->
-            <div class="product-grid" id="productGridContainer">
-                <!-- Sản phẩm sẽ được render tự động qua JavaScript -->
+            <div class="product-grid" id="productGridContainer"></div>
+
+            <!-- UTILITY BAR (LƯỢT TRUY CẬP & CHIA SẺ) -->
+            <div class="vung-tien-ich-bai-viet">
+                <div class="o-luot-xem">
+                    👁️ Lượt truy cập: <span id="so-luot-xem">Đang tải...</span>
+                </div>
+                <div class="nhom-nut-chia-se">
+                    <span>Chia sẻ trang:</span>
+                    <button type="button" onclick="chiaSeFacebook()" class="nut-cs nut-fb">🔵 Facebook</button>
+                    <button type="button" onclick="chiaSeZalo()" class="nut-cs nut-zalo">🟢 Zalo</button>
+                </div>
             </div>
         </div>
     </section>
 
-
-    <!-------------------------- 4. CHÂN TRANG (FOOTER) ------------------------>
+    <!-- 4. CHÂN TRANG (FOOTER) -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -708,9 +738,9 @@
             <div class="footer-col">
                 <h3>🔗 CHÍNH SÁCH DỊCH VỤ</h3>
                 <ul class="footer-links">
-                    <li><a href="huong-dan-dat-thiep.html"target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
-                    <li><a href="huong-dan-viet-thiep.html"target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
-                    <li><a href="#">▶ Giao hàng tận nơi toàn quốc</a></li>
+                    <li><a href="huong-dan-dat-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
+                    <li><a href="huong-dan-viet-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
+                    <li><a href="gioi-thieu.html" target="_blank" rel="noopener noreferrer">▶ Giao hàng tận nơi toàn quốc</a></li>
                 </ul>
             </div>
         </div>
@@ -722,62 +752,100 @@
     <!-- FOOTER MOBILE -->
     <div class="footer-mobile">
         <h4>THIỆP CƯỚI NGỌC THƯƠNG</h4>
-        <p>📍 135, Tổ 6, Ấp 8, Xuân Đông,Tp. Đồng Nai</p>
+        <p>📍 135, Tổ 6, Ấp 8, Xuân Đông, Tp. Đồng Nai</p>
         <div class="footer-mobile-actions">
             <a href="tel:0773060379">📞 Gọi Ngay</a>
-            <a href="https://zalo.me/0773060379" target="_blank">💬 Nhắn Zalo</a>
+            <a href="https://zalo.me/0773060379" target="_blank" rel="noopener noreferrer">💬 Nhắn Zalo</a>
         </div>
         <div class="footer-mobile-copy">
             © 2026 Thiệp Cưới Ngọc Thương
         </div>
     </div>
 
-    <!-- SCRIPT XỬ LÝ 3 TAB VÀ CHUYỂN HƯỚNG SANG TRANG CHI TIẾT TRƯỚC KHI ĐẶT HÀNG -->
-     <script src="san-pham/data-trangchu.js"></script>
+    <script src="san-pham/data-trangchu.js"></script>
     <script>
-        function renderProducts(tabKey) {
-            const container = document.getElementById("productGridContainer");
-            const items = tabProductsData[tabKey] || [];
-
-            container.innerHTML = items.map(item => `
-                <div class="product-card" onclick="goToDetailPage('${escapeHtml(item.title)}', '${escapeHtml(item.price)}', '${escapeHtml(item.img)}', '${escapeHtml(item.desc)}')">
-                    <div class="prod-img-box ${escapeHtml(item.badge || '')}" data-badge="${escapeHtml(item.badgeText || 'MỚI')}" ${item.badge === 'sale-badge' ? `data-sale="${escapeHtml(item.badgeText)}"` : ''}>
-                        <img src="${item.img}" alt="${escapeHtml(item.title)}">
-                    </div>
-                    <div class="prod-info">
-                        <span class="prod-code">Mã: ${escapeHtml(item.code)}</span>
-                        <h4 class="prod-title">${escapeHtml(item.title)}</h4>
-                        <div class="prod-rating">⭐⭐⭐⭐⭐</div>
-                        <div class="prod-price-box">
-                            <span class="price-current">${escapeHtml(item.price)}</span>
-                            ${item.oldPrice ? `<span class="price-old">${escapeHtml(item.oldPrice)}</span>` : ''}
-                        </div>
-                        <span class="btn-detail">Xem Chi Tiết</span>
-                    </div>
-                </div>
-            `).join('');
-        }
-
         function escapeHtml(str) {
             return String(str).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
         }
 
-        // Khi click vào sản phẩm -> Lưu vào localStorage rồi chuyển sang trang CHI TIẾT
+        function createNewBadgeHtml(text) {
+            const label = escapeHtml((text || "NEW").trim() || "NEW");
+            const points = [];
+            const spikes = 20;
+            const cx = 50, cy = 50;
+            const outerR = 48, innerR = 39;
+
+            for (let i = 0; i < spikes * 2; i++) {
+                const r = i % 2 === 0 ? outerR : innerR;
+                const angle = (Math.PI / spikes) * i - Math.PI / 2;
+                const x = (cx + r * Math.cos(angle)).toFixed(2);
+                const y = (cy + r * Math.sin(angle)).toFixed(2);
+                points.push(`${x},${y}`);
+            }
+
+            return `
+                <div class="new-badge" title="${label}">
+                    <svg viewBox="0 0 100 100" aria-hidden="true">
+                        <polygon points="${points.join(" ")}" fill="#177a3a"></polygon>
+                    </svg>
+                    <span>${label}</span>
+                </div>
+            `;
+        }
+
+        function renderProducts(tabKey) {
+            const container = document.getElementById("productGridContainer");
+            const items = (typeof tabProductsData !== "undefined" && tabProductsData[tabKey]) ? tabProductsData[tabKey] : [];
+
+            container.innerHTML = items.map(item => {
+                const isNewBadge = item.badge === "new-badge";
+                const boxClass = isNewBadge ? "" : (item.badge || "");
+                const saleAttr = item.badge === "sale-badge" ? `data-sale="${escapeHtml(item.badgeText)}"` : "";
+
+                return `
+                    <div class="product-card" onclick="goToDetailPage('${escapeHtml(item.title)}', '${escapeHtml(item.price)}', '${escapeHtml(item.img)}', '${escapeHtml(item.desc)}')">
+                        <div class="prod-img-wrap">
+                            ${isNewBadge ? createNewBadgeHtml(item.badgeText) : ""}
+                            <div class="prod-img-box ${escapeHtml(boxClass)}" ${saleAttr}>
+                                <img src="${item.img}" alt="${escapeHtml(item.title)}">
+                            </div>
+                        </div>
+                        <div class="prod-info">
+                            <span class="prod-code">Mã: ${escapeHtml(item.code)}</span>
+                            <h4 class="prod-title">${escapeHtml(item.title)}</h4>
+                            <div class="prod-rating">⭐⭐⭐⭐⭐</div>
+                            <div class="prod-price-box">
+                                <span class="price-current">${escapeHtml(item.price)}</span>
+                                ${item.oldPrice ? `<span class="price-old">${escapeHtml(item.oldPrice)}</span>` : ''}
+                            </div>
+                            <span class="btn-detail">Xem Chi Tiết</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
         function goToDetailPage(name, price, img, desc) {
             localStorage.setItem('clickProdName', name);
             localStorage.setItem('clickProdPrice', price);
             localStorage.setItem('clickProdImg', img);
             localStorage.setItem('clickProdDesc', desc);
-
-            // Chuyển sang trang chi tiết (bạn có thể thay đổi tên file chi tiết tương ứng nếu cần)
             window.location.href = "chi-tiet-trang-chu.html";
         }
 
+        function chiaSeFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open("https://www.facebook.com/sharer/sharer.php?u=" + url, "_blank", "noopener,noreferrer");
+        }
+
+        function chiaSeZalo() {
+            const url = encodeURIComponent(window.location.href);
+            window.open("https://zalo.me/share?url=" + url, "_blank", "noopener,noreferrer");
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
-            // Hiển thị mặc định tab đầu tiên (Bán chạy nhất)
             renderProducts("best-seller");
 
-            // Xử lý sự kiện bấm chuyển qua lại giữa 3 tab
             const tabButtons = document.querySelectorAll(".tab-btn");
             tabButtons.forEach(button => {
                 button.addEventListener("click", function() {
@@ -787,95 +855,113 @@
                     renderProducts(tabKey);
                 });
             });
+
+            const searchConfigs = [
+                {
+                    form: document.getElementById("search-form"),
+                    input: document.getElementById("search-input"),
+                    btn: document.getElementById("search-btn")
+                },
+                {
+                    form: document.getElementById("mobile-search-form"),
+                    input: document.getElementById("mobile-search-input"),
+                    btn: document.getElementById("mobile-search-btn")
+                }
+            ];
+
+            function goSearchFrom(inputEl) {
+                if (!inputEl) return;
+                const code = inputEl.value.trim();
+                window.location.href = code
+                    ? `tim-kiem.html?code=${encodeURIComponent(code)}`
+                    : "tim-kiem.html";
+            }
+
+            searchConfigs.forEach(cfg => {
+                if (cfg.form && cfg.input) {
+                    cfg.form.addEventListener("submit", function (e) {
+                        e.preventDefault();
+                        goSearchFrom(cfg.input);
+                    });
+                }
+                if (cfg.btn && cfg.input) {
+                    cfg.btn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        goSearchFrom(cfg.input);
+                    });
+                }
+            });
         });
+    </script>
 
-        //----------------------------------
+    <!-- ĐẾM LƯỢT TRUY CẬP CHUNG BẰNG CLOUD FIRESTORE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import {
+            getFirestore,
+            doc,
+            getDoc,
+            setDoc,
+            updateDoc,
+            increment,
+            serverTimestamp
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        function createNewBadgeHtml(text) {
-    const label = escapeHtml((text || "NEW").trim() || "NEW");
-    const points = [];
-    const spikes = 20; // Số mũi nhọn xung quanh khung
-    const cx = 50, cy = 50;
-    const outerR = 48, innerR = 39;
+        const firebaseConfig = {
+            apiKey: "AIzaSyBdFVN7qwuxgkiHo9Fejr4K7pLceEu6gh4",
+            authDomain: "quan-ly-san-pham-55ec5.firebaseapp.com",
+            projectId: "quan-ly-san-pham-55ec5",
+            storageBucket: "quan-ly-san-pham-55ec5.firebasestorage.app",
+            messagingSenderId: "845660088489",
+            appId: "1:845660088489:web:49635a861acff93c6a21b8"
+        };
 
-    for (let i = 0; i < spikes * 2; i++) {
-        const r = i % 2 === 0 ? outerR : innerR;
-        const angle = (Math.PI / spikes) * i - Math.PI / 2;
-        const x = (cx + r * Math.cos(angle)).toFixed(2);
-        const y = (cy + r * Math.sin(angle)).toFixed(2);
-        points.push(`${x},${y}`);
-    }
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
-    return `
-        <div class="new-badge" title="${label}">
-            <svg viewBox="0 0 100 100" aria-hidden="true">
-                <polygon points="${points.join(" ")}" fill="#177a3a"></polygon>
-            </svg>
-            <span>${label}</span>
-        </div>
-    `;
-}
+        const maBaiViet = "trang-chu";
+        const viewEl = document.getElementById("so-luot-xem");
+        const docRef = doc(db, "page_views", maBaiViet);
 
-function renderProducts(tabKey) {
-    const container = document.getElementById("productGridContainer");
-    const items = tabProductsData[tabKey] || [];
+        const sessionKey = "viewed_session_" + maBaiViet;
+        const daDemTrongPhien = sessionStorage.getItem(sessionKey) === "1";
 
-    container.innerHTML = items.map(item => {
-        const isNewBadge = item.badge === "new-badge";
-        const boxClass = isNewBadge ? "" : (item.badge || "");
-        const saleAttr = item.badge === "sale-badge" ? `data-sale="${escapeHtml(item.badgeText)}"` : "";
+        async function capNhatVaHienThiLuotXem() {
+            try {
+                const snap = await getDoc(docRef);
 
-        return `
-            <div class="product-card" onclick="goToDetailPage('${escapeHtml(item.title)}', '${escapeHtml(item.price)}', '${escapeHtml(item.img)}', '${escapeHtml(item.desc)}')">
-                <div class="prod-img-wrap">
-                    ${isNewBadge ? createNewBadgeHtml(item.badgeText) : ""}
-                    <div class="prod-img-box ${escapeHtml(boxClass)}" ${saleAttr}>
-                        <img src="${item.img}" alt="${escapeHtml(item.title)}">
-                    </div>
-                </div>
-                <div class="prod-info">
-                    <span class="prod-code">Mã: ${escapeHtml(item.code)}</span>
-                    <h4 class="prod-title">${escapeHtml(item.title)}</h4>
-                    <div class="prod-rating">⭐⭐⭐⭐⭐</div>
-                    <div class="prod-price-box">
-                        <span class="price-current">${escapeHtml(item.price)}</span>
-                        ${item.oldPrice ? `<span class="price-old">${escapeHtml(item.oldPrice)}</span>` : ''}
-                    </div>
-                    <span class="btn-detail">Xem Chi Tiết</span>
-                </div>
-            </div>
-        `;
-    }).join('');
-}
+                if (!snap.exists()) {
+                    const initialCount = 121;
+                    await setDoc(docRef, {
+                        count: initialCount,
+                        updatedAt: serverTimestamp()
+                    });
+                    sessionStorage.setItem(sessionKey, "1");
+                    if (viewEl) viewEl.textContent = initialCount.toLocaleString("vi-VN");
+                    return;
+                }
 
-        //----HÀM TÌM KIẾM-----
-        document.addEventListener("DOMContentLoaded", function () {
-    const searchForm = document.getElementById("search-form");
-    const searchInput = document.getElementById("search-input");
-    const searchBtn = document.getElementById("search-btn");
+                let currentCount = Number(snap.data().count || 0);
 
-    function goSearch() {
-        if (!searchInput) return;
-        const code = searchInput.value.trim();
-        window.location.href = code
-            ? `tim-kiem.html?code=${encodeURIComponent(code)}`
-            : "tim-kiem.html";
-    }
+                if (!daDemTrongPhien) {
+                    await updateDoc(docRef, {
+                        count: increment(1),
+                        updatedAt: serverTimestamp()
+                    });
+                    sessionStorage.setItem(sessionKey, "1");
+                    currentCount += 1;
+                }
 
-    if (searchForm) {
-        searchForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            goSearch();
-        });
-    }
+                if (viewEl) {
+                    viewEl.textContent = currentCount.toLocaleString("vi-VN");
+                }
+            } catch (err) {
+                console.error("Lỗi cập nhật lượt xem Firestore:", err);
+                if (viewEl) viewEl.textContent = "—";
+            }
+        }
 
-    if (searchBtn) {
-        searchBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            goSearch();
-        });
-    }
-});
+        capNhatVaHienThiLuotXem();
     </script>
 </body>
 </html>

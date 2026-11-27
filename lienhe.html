@@ -578,22 +578,31 @@ z-index: 10;
     </style>
 </head>
 <body>
-<div class="banner-mobile">
-    <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Điện Thoại"></a>
-</div>
+    <!-- 1. BANNER MOBILE CỬA HÀNG -->
+    <div class="banner-mobile">
+        <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Điện Thoại"></a>
+    </div>
 
+    <!-- THANH TÌM KIẾM RIÊNG CHO MOBILE -->
+    <div class="mobile-search-bar">
+        <form id="mobile-search-form" action="tim-kiem.html" method="get">
+            <input type="text" id="mobile-search-input" name="code" placeholder="Tìm mã hoặc tên thiệp..." autocomplete="off">
+            <button type="submit" id="mobile-search-btn">🔍</button>
+        </form>
+    </div>
+
+    <!-- 1. BANNER DESKTOP CỬA HÀNG -->
     <div class="banner">
-        <img src="anh/banner.png" alt="Banner">
+        <img src="anh/banner.png" alt="Nhà In Thiệp Cưới Ngọc Thương - Mẫu Thiệp Cưới Đẹp Tại Đồng Nai">
         <div class="banner-content">
-        <div class="banner-search">
-                <form id="banner-search-form" action="tim-kiem.html" method="get">
-                    <input type="text" id="banner-search-input" name="code" placeholder="Tìm mã thiệp (VD: 9101)..." autocomplete="off">
-                    <button type="submit">🔍</button>
+            <div class="banner-search">
+                <form id="search-form" action="tim-kiem.html" method="get">
+                    <input type="text" id="search-input" name="code" placeholder="Tìm mã hoặc tên thiệp..." autocomplete="off">
+                    <button type="submit" id="search-btn">🔍</button>
                 </form>
             </div>
         </div>
-        </div>
-
+    </div>
     <!-- 2. THANH MENU HÀNG HÓA -->
 
     <nav class="navbar">
@@ -1096,9 +1105,9 @@ document.getElementById("formLienHe").addEventListener("submit", async function(
             <div class="footer-col">
                 <h3>🔗 CHÍNH SÁCH DỊCH VỤ</h3>
                 <ul class="footer-links">
-                    <li><a href="huong-dan-dat-thiep.html"target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
-                    <li><a href="huong-dan-viet-thiep.html"target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
-                    <li><a href="#">▶ Giao hàng tận nơi toàn quốc</a></li>
+                    <li><a href="huong-dan-dat-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
+                    <li><a href="huong-dan-viet-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
+                    <li><a href="gioi-thieu.html" target="_blank" rel="noopener noreferrer">▶ Giao hàng tận nơi toàn quốc</a></li>
                 </ul>
             </div>
         </div>
