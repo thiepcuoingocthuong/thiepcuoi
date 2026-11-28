@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Thiệp Truyền Thống</title>
+    <title>Chi tiết thiệp cưới truyền thống - Thiệp Cưới Ngọc Thương</title>
+    <meta name="description" content="Xem chi tiết mẫu thiệp cưới hiện đại kỹ thuật số tại Thiệp Cưới Ngọc Thương - Đồng Nai. Chất liệu giấy mỹ thuật, in sắc nét, tặng thiệp cưới online, giao hàng toàn quốc.">
+    <link rel="canonical" href="https://thiepcuoingocthuong.com/chi-tiet-hien-dai.html">
     <link rel="icon" type="image/png" href="anh/logo.png">
     <style>
         /* --- NHÚNG TOÀN BỘ CSS ĐỒNG BỘ TỪ TRANG CHỦ --- */
@@ -38,7 +40,7 @@
         .dropdown-menu a:hover { background-color: #687b6c; padding-left: 25px; }
         .menu-item:hover .dropdown-menu { display: block; }
 
-           /* Responsive Mobile */
+        /* Responsive Mobile */
         .navbar-mobile, .banner-mobile, .footer-mobile { display: none !important; }
 
         @media (max-width: 768px) {
@@ -47,22 +49,34 @@
             .navbar-mobile {
                 display: flex !important;
                 justify-content: space-around;
-                align-items: center;
                 background: #526456;
-                padding: 8px 5px;
+                padding: 12px 5px;
                 position: sticky;
                 top: 0;
                 z-index: 999;
             }
-            .navbar-mobile > a, .mobile-dropdown-btn {
+            .navbar-mobile a { color: #ffffff; text-decoration: none; font-weight: bold; font-size: 14.5px; }
+            .banner-mobile { display: block !important; width: 100%; margin-bottom: 10px; }
+            .banner-mobile img { width: 100%; height: auto; display: block; }
+            .footer-mobile {
+                display: block !important;
+                background: #526456;
                 color: #ffffff;
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 14.5px;
-                cursor: pointer;
-                list-style: none;
-                user-select: none;
+                text-align: center;
+                padding: 25px 15px;
+                font-size: 13.5px;
+                line-height: 1.6;
+                margin-top: 30px;
             }
+            .footer-mobile h4 { color: #ffffff; font-size: 15px; margin-bottom: 10px; text-transform: uppercase; }
+            .footer-mobile p { margin-bottom: 8px; }
+            .footer-mobile-actions { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
+            .footer-mobile-actions a {
+                background: #ffffff; color: #526456; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 13px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            .footer-mobile-copy { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 15px; padding-top: 12px; font-size: 12px; color: #bbb; }
+            footer { display: none !important; }
+
             .mobile-dropdown-btn::-webkit-details-marker { display: none; }
             .mobile-dropdown { position: relative; }
             .mobile-dropdown-content {
@@ -85,58 +99,42 @@
                 font-size: 13.5px;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             }
-            .banner-mobile { display: block !important; width: 100%; margin-bottom: 10px; }
-            .banner-mobile img { width: 100%; height: auto; display: block; }
-            .footer-mobile {
-                display: block !important;
-                background: #526456;
-                color: #ffffff;
-                text-align: center;
-                padding: 25px 15px;
-                font-size: 13.5px;
-                line-height: 1.6;
-                margin-top: 30px;
-            }
-            .footer-mobile h4 { color: #ffffff; font-size: 15px; margin-bottom: 10px; text-transform: uppercase; }
-            .footer-mobile p { margin-bottom: 8px; }
-            .footer-mobile-actions { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
-            .footer-mobile-actions a {
-                background: #ffffff; color: #526456; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 13px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            }
-            .footer-mobile-copy { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 15px; padding-top: 12px; font-size: 12px; color: #bbb; }
         }
-
-        footer {
-            background-color: #e0e1e0;
-            color: #000;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            padding: 40px 0 20px 0;
-            margin-top: 60px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .footer-col { flex: 1; min-width: 280px; margin-bottom: 30px; padding-right: 20px; }
-        .footer-col h3 { color: #000; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; }
-        .footer-col p { margin-bottom: 10px; }
-        .footer-links { list-style: none; padding: 0; margin: 0; }
-        .footer-links li { margin-bottom: 8px; }
-        .footer-links a { color: #000; text-decoration: none; }
-        .footer-copyright { text-align: center; border-top: 1px solid #bab6b6; margin-top: 20px; padding-top: 20px; font-size: 0.8rem; color: #000; width: 100%; }
 
         /* --- CSS RIÊNG TRANG CHI TIẾT SẢN PHẨM --- */
         .product-detail-container { max-width: 1200px; margin: 40px auto 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 40px; box-sizing: border-box; }
         .detail-gallery { flex: 1.2; min-width: 350px; }
-        .detail-gallery img { width: 100%; max-height: 500px; object-fit: contain; background-color: #fafafa; border-radius: 6px; border: 1px solid #eef0f5; cursor: zoom-in; transition: opacity 0.2s; }
-        .detail-gallery img:hover { opacity: 0.95; }
+        .detail-gallery > img { width: 100%; max-height: 500px; object-fit: contain; background-color: #fafafa; border-radius: 6px; border: 1px solid #eef0f5; cursor: zoom-in; transition: opacity 0.2s; display: block; }
+        .detail-gallery > img:hover { opacity: 0.95; }
+
+        /* Danh sách tối đa 4 ảnh thu nhỏ nằm ngang dưới ảnh lớn */
+        .detail-thumbs {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .detail-thumb-item {
+            width: 78px;
+            height: 78px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid #e2e5ec;
+            cursor: pointer;
+            opacity: 0.75;
+            transition: all 0.2s ease;
+            background: #fff;
+        }
+        .detail-thumb-item:hover {
+            opacity: 1;
+            border-color: #526456;
+        }
+        .detail-thumb-item.active {
+            opacity: 1;
+            border-color: #d93838;
+            box-shadow: 0 2px 8px rgba(217, 56, 56, 0.25);
+        }
+
         .detail-content { flex: 1; min-width: 350px; display: flex; flex-direction: column; }
         .detail-title { font-size: 1.8rem; font-weight: 600; margin-bottom: 15px; color: #111; }
         .detail-price { font-size: 1.8rem; color: #d93838; font-weight: bold; margin-bottom: 5px; }
@@ -152,23 +150,7 @@
         .image-modal .close-modal { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.2s; }
         .image-modal .close-modal:hover { color: #d93838; }
 
-        /* --- PHẦN "CÙNG LOẠI" --- */
-        .related-section { max-width: 1200px; margin: 0 auto 50px auto; padding: 0 15px; box-sizing: border-box; }
-        .related-title { color: #6a0716; font-size: 24px; margin-bottom: 25px; border-bottom: 2px solid currentColor; padding-bottom: 8px; text-align: left; text-transform: uppercase; font-weight: bold; }
-
-        .product_noibat_box { display: flex; flex-wrap: wrap; margin-right: -10px; margin-left: -10px; }
-        .product_noibat_item { position: relative; width: 25%; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; box-sizing: border-box; }
-        .product_noibat_item .img_pro { position: relative; display: block; width: 100%; overflow: hidden; background: #f7f7f7; border-radius: 4px; margin-bottom: 10px; cursor: pointer; }
-        .product_noibat_item .img_pro img { width: 100%; height: 220px; display: block; object-fit: cover; transition: transform 0.3s ease; }
-        .product_noibat_item .img_pro:hover img { transform: scale(1.05); }
-        .product_noibat_item h3 { margin: 0 0 5px 0; display: block; font-size: 14px; font-weight: 500; line-height: 1.4; height: 40px; overflow: hidden; }
-        .product_noibat_item h3 a { color: #333; text-decoration: none; transition: color 0.2s ease; cursor: pointer; }
-        .product_noibat_item h3 a:hover { color: #2980b9; }
-        .text-split { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-        .product_noibat_item .box_price_box { font-size: 14px; margin-top: 5px; }
-        .product_noibat_item .box_price_box strong { color: #e74c3c; font-weight: bold; margin: 0; }
-
-         /* --- 6. UTILITY BAR (LƯỢT XEM & CHIA SẺ) --- */
+        /* --- UTILITY BAR (LƯỢT XEM & CHIA SẺ) --- */
         .vung-tien-ich-bai-viet {
             display: flex;
             justify-content: space-between;
@@ -216,6 +198,39 @@
 
         .nut-fb { background-color: #1877f2; }
         .nut-zalo { background-color: #0068ff; }
+
+        /* --- PHẦN "CÙNG LOẠI" --- */
+        .related-section { max-width: 1200px; margin: 0 auto 50px auto; padding: 0 15px; box-sizing: border-box; }
+        .related-title { color: #6a0716; font-size: 24px; margin-bottom: 25px; border-bottom: 2px solid currentColor; padding-bottom: 8px; text-align: left; text-transform: uppercase; font-weight: bold; }
+
+        .product_noibat_box { display: flex; flex-wrap: wrap; margin-right: -10px; margin-left: -10px; }
+        .product_noibat_item { position: relative; width: 25%; padding-right: 10px; padding-left: 10px; margin-bottom: 20px; box-sizing: border-box; }
+        .product_noibat_item .pro-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: #ffffff;
+            border: 1px solid #ece6e4;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(82, 100, 86, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .product_noibat_item .pro-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(106, 7, 22, 0.12);
+            border-color: #d8b4b8;
+        }
+        .product_noibat_item .img_pro { position: relative; display: block; width: 100%; overflow: hidden; background: #faf8f7; border-radius: 7px; margin-bottom: 10px; cursor: pointer; }
+        .product_noibat_item .img_pro img { width: 100%; height: 210px; display: block; object-fit: cover; transition: transform 0.3s ease; }
+        .product_noibat_item .pro-card:hover .img_pro img { transform: scale(1.05); }
+        .product_noibat_item h3 { margin: 0 0 8px 0; display: block; font-size: 14px; font-weight: 600; line-height: 1.4; height: 39px; overflow: hidden; }
+        .product_noibat_item h3 a { color: #333; text-decoration: none; transition: color 0.2s ease; cursor: pointer; }
+        .product_noibat_item h3 a:hover { color: #2980b9; }
+        .text-split { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .product_noibat_item .box_price_box { margin-top: auto; padding-top: 6px; border-top: 1px dashed #f0eaea; display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 14px; }
+        .product_noibat_item .box_price_box strong { color: #c82333; font-size: 14.5px; font-weight: bold; margin: 0; }
+
         /* --- PHÂN TRANG CSS --- */
         .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 30px; }
         .pagination button { padding: 8px 14px; border: 1px solid #ddd; background: #fff; color: #333; font-weight: 600; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
@@ -234,15 +249,13 @@
         .footer-links a:hover { color: #03692a; }
         .footer-copyright { text-align: center; border-top: 1px solid #bab6b6; margin-top: 20px; padding-top: 20px; font-size: 0.8rem; color: #000; width: 100%; }
 
-        .navbar-mobile, .banner-mobile, .footer-mobile { display: none !important; }
-
         @media (max-width: 992px) {
             .product_noibat_item { width: 33.333%; }
         }
 
         @media (max-width: 768px) {
             .product_noibat_item { width: 50%; }
-            .main-menu, .banner, .footer, .menu-item, .banner-search { display: none !important; }
+            .main-menu, .navbar, .banner, footer, .menu-item, .banner-search { display: none !important; }
             .navbar-mobile { display: flex !important; justify-content: space-around; background: #526456; padding: 12px 5px; position: sticky; top: 0; z-index: 999; }
             .navbar-mobile a { color: #ffffff; text-decoration: none; font-weight: bold; font-size: 14.5px; }
             .banner-mobile { display: block !important; width: 100%; margin-bottom: 10px; }
@@ -254,123 +267,67 @@
             .footer-mobile-actions a { background: #ffffff; color: #526456; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 13px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
             .footer-mobile-copy { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 15px; padding-top: 12px; font-size: 12px; color: #bbb; }
             footer { display: none !important; }
-            
+
             .mobile-dropdown-btn::-webkit-details-marker { display: none; }
             .mobile-dropdown { position: relative; }
             .mobile-dropdown-content { position: absolute; top: 100%; left: 0; background-color: #435247; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.25); border-radius: 6px; margin-top: 8px; overflow: hidden; z-index: 1000; }
             .mobile-dropdown-content a { color: #ffffff; padding: 10px 16px; text-decoration: none; display: block; font-size: 13.5px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
         }
-                        /* --- KHUNG BỌC CARD SẢN PHẨM CÙNG LOẠI --- */
-.product_noibat_item .pro-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: #ffffff;
-    border: 1px solid #ece6e4;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 8px rgba(82, 100, 86, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
 
-.product_noibat_item .pro-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(106, 7, 22, 0.12);
-    border-color: #d8b4b8;
-}
+        /* --- THANH TÌM KIẾM MOBILE --- */
+        .mobile-search-bar {
+            display: none;
+        }
 
-.product_noibat_item .img_pro {
-    border-radius: 7px;
-    margin-bottom: 10px;
-    background: #faf8f7;
-}
+        @media (max-width: 768px) {
+            .mobile-search-bar {
+                display: block;
+                padding: 8px 15px 4px 15px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
 
-.product_noibat_item .img_pro img {
-    height: 210px;
-}
+            .mobile-search-bar form {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                background: #ffffff;
+                border: 1px solid #d8c4bc;
+                border-radius: 22px;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            }
 
-.product_noibat_item .pro-card:hover .img_pro img {
-    transform: scale(1.05);
-}
+            .mobile-search-bar input {
+                flex: 1;
+                min-width: 0;
+                height: 100%;
+                padding: 0 14px;
+                border: none;
+                outline: none;
+                background: transparent;
+                color: #333;
+                font-size: 14px;
+            }
 
-.product_noibat_item h3 {
-    margin: 0 0 8px 0;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4;
-    height: 39px;
-    overflow: hidden;
-}
-
-.product_noibat_item .box_price_box {
-    margin-top: auto;
-    padding-top: 6px;
-    border-top: 1px dashed #f0eaea;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-}
-
-.product_noibat_item .box_price_box strong {
-    color: #c82333;
-    font-size: 14.5px;
-}
-/*-------------------Thanh menu Mobile------------*/
-/* Mặc định ẩn trên PC */
-.mobile-search-bar {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .mobile-search-bar {
-        display: block;
-        padding: 8px 15px 4px 15px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .mobile-search-bar form {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 40px;
-        background: #ffffff;
-        border: 1px solid #d8c4bc;
-        border-radius: 22px;
-        overflow: hidden;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    }
-
-    .mobile-search-bar input {
-        flex: 1;
-        min-width: 0;
-        height: 100%;
-        padding: 0 14px;
-        border: none;
-        outline: none;
-        background: transparent;
-        color: #333;
-        font-size: 14px;
-    }
-
-    .mobile-search-bar button {
-        height: 100%;
-        padding: 0 14px;
-        border: none;
-        background: #526456;
-        color: #ffffff;
-        cursor: pointer;
-        font-size: 15px;
-    }
-}
+            .mobile-search-bar button {
+                height: 100%;
+                padding: 0 14px;
+                border: none;
+                background: #526456;
+                color: #ffffff;
+                cursor: pointer;
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- 1. BANNER MOBILE CỬA HÀNG -->
     <div class="banner-mobile">
-        <a href="index.html"><img src="anh/banner-mobile.png" alt="Banner Điện Thoại"></a>
+        <a href="index.html"><img src="anh/banner-mobile.png" alt="Nhà In Thiệp Cưới Ngọc Thương - Chi Tiết Mẫu Thiệp Hiện Đại"></a>
     </div>
 
     <!-- THANH TÌM KIẾM RIÊNG CHO MOBILE -->
@@ -393,6 +350,7 @@
             </div>
         </div>
     </div>
+
     <!-- 2. THANH MENU HÀNG HÓA -->
     <nav class="navbar">
         <ul class="main-menu">
@@ -401,6 +359,7 @@
             <li class="menu-item">
                 <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Cưới ▾</a>
                 <ul class="dropdown-menu">
+                    <li><a href="thiepcuoi-kts-dq-06.html">Thiệp Cưới KTS DQ-06</a></li>
                     <li><a href="thiepcuoi-hiendai.html">Thiệp Cưới Hiện Đại</a></li>
                     <li><a href="thiepcuoi-truyenthong.html">Thiệp Cưới Truyền Thống</a></li>
                     <li><a href="thiepcuoi-docquyen.html">Thiệp Cưới Độc Quyền KTS</a></li>
@@ -433,6 +392,7 @@
             <summary class="mobile-dropdown-btn">Sản Phẩm ▾</summary>
             <div class="mobile-dropdown-content">
                 <a href="index.html">📌 Tất Cả Mẫu Thiệp</a>
+                <a href="thiepcuoi-kts-dq-06.html">Thiệp Cưới KTS DQ-06</a>
                 <a href="thiepcuoi-hiendai.html">Mẫu Thiệp Hiện Đại</a>
                 <a href="thiepcuoi-truyenthong.html">Mẫu Thiệp Truyền Thống</a>
                 <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Độc Quyền KTS</a>
@@ -456,19 +416,20 @@
     <main class="product-detail-container">
         <div class="detail-gallery">
             <img src="" alt="Hình ảnh thiệp cưới" id="prod-image" onclick="openImageModal(this.src)" title="Click để phóng to ảnh">
+            <div class="detail-thumbs" id="prod-thumbs"></div>
         </div>
         <div class="detail-content">
-            <h2 class="detail-title" id="prod-title">Đang tải tên sản phẩm...</h2>
+            <h1 class="detail-title" id="prod-title">Đang tải tên sản phẩm...</h1>
             <div>
                 <span class="detail-price" id="prod-price">0 đ</span>
                 <span style="color: #666; font-weight: 500;"> / bộ</span>
             </div>
             <p class="price-note">(* Giá đã bao gồm đầy đủ thiết kế bản vẽ và công in thành phẩm)</p>
-            
+
             <div class="detail-desc-title">Thông số & Chất liệu:</div>
             <div class="detail-desc" id="prod-desc"></div>
 
-            <button class="btn-order-now" onclick="transferDataToOrderPage()">TIẾN HÀNH ĐẶT IN</button>
+            <button type="button" class="btn-order-now" onclick="transferDataToOrderPage()">TIẾN HÀNH ĐẶT IN</button>
         </div>
     </main>
 
@@ -481,7 +442,7 @@
     <!-- 4. KHU VỰC SẢN PHẨM CÙNG LOẠI CÓ PHÂN TRANG -->
     <section class="related-section">
         <h3 class="related-title">Mẫu Thiệp cùng Loại</h3>
-        
+
         <div class="product_noibat_box" id="product-list">
             <!-- Sản phẩm được render tự động qua JavaScript từ file data-hiendai.js -->
         </div>
@@ -489,7 +450,7 @@
         <!-- Thanh phân trang -->
         <div class="pagination" id="pagination"></div>
 
-                   <!-- UTILITY BAR (LƯỢT XEM & CHIA SẺ) -->
+        <!-- UTILITY BAR (LƯỢT XEM & CHIA SẺ) -->
         <div class="vung-tien-ich-bai-viet">
             <div class="o-luot-xem">
                 👁️ Lượt xem: <span id="so-luot-xem">Đang tải...</span>
@@ -497,12 +458,13 @@
 
             <div class="nhom-nut-chia-se">
                 <span>Chia sẻ bài viết:</span>
-                <button onclick="chiaSeFacebook()" class="nut-cs nut-fb">🔵 Facebook</button>
-                <button onclick="chiaSeZalo()" class="nut-cs nut-zalo">🟢 Zalo</button>
+                <button type="button" onclick="chiaSeFacebook()" class="nut-cs nut-fb">🔵 Facebook</button>
+                <button type="button" onclick="chiaSeZalo()" class="nut-cs nut-zalo">🟢 Zalo</button>
             </div>
+        </div>
     </section>
 
-    <!-------------------------- 4. CHÂN TRANG (FOOTER) ------------------------>
+    <!-- 5. CHÂN TRANG (FOOTER) -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -517,7 +479,7 @@
             </div>
             <div class="footer-col">
                 <h3>🔗 CHÍNH SÁCH DỊCH VỤ</h3>
-               <ul class="footer-links">
+                <ul class="footer-links">
                     <li><a href="huong-dan-dat-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn đặt thiệp</a></li>
                     <li><a href="huong-dan-viet-thiep.html" target="_blank" rel="noopener noreferrer">▶ Hướng dẫn viết thiệp cưới</a></li>
                     <li><a href="gioi-thieu.html" target="_blank" rel="noopener noreferrer">▶ Giao hàng tận nơi toàn quốc</a></li>
@@ -532,10 +494,10 @@
     <!-- FOOTER MOBILE -->
     <div class="footer-mobile">
         <h4>THIỆP CƯỚI NGỌC THƯƠNG</h4>
-        <p>📍 135, Tổ 6, Ấp 8, Xuân Đông,Tp. Đồng Nai</p>
+        <p>📍 135, Tổ 6, Ấp 8, Xuân Đông, Tp. Đồng Nai</p>
         <div class="footer-mobile-actions">
             <a href="tel:0773060379">📞 Gọi Ngay</a>
-            <a href="https://zalo.me/0773060379" target="_blank">💬 Nhắn Zalo</a>
+            <a href="https://zalo.me/0773060379" target="_blank" rel="noopener noreferrer">💬 Nhắn Zalo</a>
         </div>
         <div class="footer-mobile-copy">
             © 2026 Thiệp Cưới Ngọc Thương
@@ -548,32 +510,101 @@
         const itemsPerPage = 20;
         let currentPage = 1;
 
+        function getProductImages(item) {
+            if (!item) return [];
+            if (Array.isArray(item.images) && item.images.length > 0) {
+                return item.images.filter(Boolean).slice(0, 4);
+            }
+            if (item.image) {
+                return [item.image];
+            }
+            return [];
+        }
+
+        function parseStoredImages() {
+            const raw = localStorage.getItem('clickProdImages');
+            if (!raw) return null;
+            try {
+                const parsed = JSON.parse(raw);
+                return Array.isArray(parsed) ? parsed.filter(Boolean).slice(0, 4) : null;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function renderGallery(images, prodName) {
+            const list = (Array.isArray(images) ? images : []).filter(Boolean).slice(0, 4);
+            const mainImg = document.getElementById("prod-image");
+            const thumbsBox = document.getElementById("prod-thumbs");
+
+            if (!mainImg || !thumbsBox) return;
+
+            const firstImg = list[0] || "";
+            mainImg.src = firstImg;
+            mainImg.alt = prodName || "Hình ảnh thiệp cưới";
+
+            if (list.length <= 1) {
+                thumbsBox.innerHTML = "";
+                return;
+            }
+
+            thumbsBox.innerHTML = list.map((src, idx) => `
+                <img
+                    src="${escapeHtml(src)}"
+                    alt="${escapeHtml(prodName || "Ảnh mẫu thiệp")} - ảnh ${idx + 1}"
+                    class="detail-thumb-item ${idx === 0 ? "active" : ""}"
+                    onclick="selectThumbImage(this, '${escapeHtml(src)}')"
+                >
+            `).join("");
+        }
+
+        function selectThumbImage(thumbEl, src) {
+            const mainImg = document.getElementById("prod-image");
+            if (mainImg) {
+                mainImg.src = src;
+            }
+            document.querySelectorAll("#prod-thumbs .detail-thumb-item").forEach(el => {
+                el.classList.remove("active");
+            });
+            if (thumbEl) {
+                thumbEl.classList.add("active");
+            }
+        }
+
+        function updateDetailDesc(name, price, moTa) {
+            document.getElementById("prod-desc").innerHTML =
+                "<p><strong>Tên sản phẩm:</strong> " + escapeHtml(name) + ".</p>" +
+                "<p><strong>Chi tiết:</strong> " + escapeHtml(moTa || 'Chưa cập nhật') + ".</p>" +
+                "<p><strong>Đơn giá hoàn thiện:</strong> " + escapeHtml(price) + " (Bao gồm bao thư + ruột thiệp).</p>" +
+                "<p><strong>Chất liệu giấy:</strong> Giấy mỹ thuật cao cấp dày dặn, có vân mịn sang trọng.</p>" +
+                "<p><strong>Công nghệ in:</strong> Kỹ thuật số độ phân giải cao, mực in sắc nét không phai.</p>" +
+                "<p><strong>Ứng dụng:</strong> Phù hợp làm thiệp đám cưới, tiệc thành hôn, tiệc báo hỷ.</p>";
+        }
+
         window.onload = function() {
-            // Kiểm tra xem file data-hiendai.js có tồn tại mảng products không
             const allProducts = typeof truyenthongProducts !== 'undefined' ? truyenthongProducts : [];
 
             if (allProducts.length > 0) {
-                var firstProd = allProducts[0];
-                var name = localStorage.getItem('clickProdName') || firstProd.name;
-                var price = localStorage.getItem('clickProdPrice') || firstProd.price;
-                var imgUrl = localStorage.getItem('clickProdImg') || firstProd.image;
-                var description = localStorage.getItem('clickProdDesc') || firstProd.desc;
+                const firstProd = allProducts[0];
+                const name = localStorage.getItem('clickProdName') || firstProd.name;
+                const price = localStorage.getItem('clickProdPrice') || firstProd.price;
+                const imgUrl = localStorage.getItem('clickProdImg') || firstProd.image;
+                const description = localStorage.getItem('clickProdDesc') || firstProd.desc;
+
+                let imagesArr = parseStoredImages();
+                if (!imagesArr || imagesArr.length === 0) {
+                    const matched = allProducts.find(p => p.name === name || p.image === imgUrl);
+                    imagesArr = matched ? getProductImages(matched) : (imgUrl ? [imgUrl] : getProductImages(firstProd));
+                }
 
                 document.getElementById("prod-title").innerText = name;
                 document.getElementById("prod-price").innerText = price;
-                document.getElementById("prod-image").src = imgUrl;
-                
-                document.getElementById("prod-desc").innerHTML = 
-                    "<p><strong>Tên sản phẩm:</strong> " + escapeHtml(name) + ".</p>" +
-                    "<p><strong>Chi tiết:</strong> " + escapeHtml(description) + ".</p>" +
-                    "<p><strong>Đơn giá hoàn thiện:</strong> " + escapeHtml(price) + " (Bao gồm bao thư + ruột thiệp).</p>" +
-                    "<p><strong>Chất liệu giấy:</strong> Giấy mỹ thuật cao cấp dày dặn, có vân mịn sang trọng.</p>" +
-                    "<p><strong>Công nghệ in:</strong> Kỹ thuật số độ phân giải cao, mực in sắc nét không phai.</p>" +
-                    "<p><strong>Ứng dụng:</strong> Phù hợp làm thiệp đám cưới, tiệc thành hôn, tiệc báo hỷ.</p>";
+                renderGallery(imagesArr, name);
+                updateDetailDesc(name, price, description);
             }
 
             renderPage(currentPage);
-        }
+        };
 
         function renderPage(page) {
             currentPage = page;
@@ -582,17 +613,23 @@
             const end = start + itemsPerPage;
             const paginatedItems = allProducts.slice(start, end);
 
-            const productListHTML = paginatedItems.map(item => `
-    <div class="product_noibat_item" data-description="${escapeHtml(item.desc)}">
-        <div class="pro-card">
-            <a class="img_pro" href="#" onclick="event.preventDefault(); chonMau(this, '${escapeHtml(item.price)}', '${escapeHtml(item.desc)}');">
-                <img src="${item.image}" alt="${escapeHtml(item.name)}">
-            </a>
-            <h3><a href="#" class="text-split" onclick="event.preventDefault(); chonMau(this, '${escapeHtml(item.price)}', '${escapeHtml(item.desc)}');">${escapeHtml(item.name)}</a></h3>
-            <div class="box_price_box"><strong>${escapeHtml(item.price)}</strong></div>
-        </div>
-    </div>
-`).join('');
+            const productListHTML = paginatedItems.map(item => {
+                const imgs = getProductImages(item);
+                const cover = imgs[0] || item.image || "";
+                const encodedImgs = encodeURIComponent(JSON.stringify(imgs));
+
+                return `
+                    <div class="product_noibat_item" data-description="${escapeHtml(item.desc || '')}" data-images="${encodedImgs}">
+                        <div class="pro-card">
+                            <a class="img_pro" href="#" onclick="event.preventDefault(); chonMau(this, '${escapeHtml(item.price)}', '${escapeHtml(item.desc || '')}');">
+                                <img src="${cover}" alt="${escapeHtml(item.name)}">
+                            </a>
+                            <h3><a href="#" class="text-split" onclick="event.preventDefault(); chonMau(this, '${escapeHtml(item.price)}', '${escapeHtml(item.desc || '')}');">${escapeHtml(item.name)}</a></h3>
+                            <div class="box_price_box"><strong>${escapeHtml(item.price)}</strong></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
 
             document.getElementById('product-list').innerHTML = productListHTML;
             renderPagination();
@@ -604,7 +641,7 @@
             let paginationHTML = '';
 
             for (let i = 1; i <= pageCount; i++) {
-                paginationHTML += `<button class="${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+                paginationHTML += `<button type="button" class="${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
             }
 
             document.getElementById('pagination').innerHTML = paginationHTML;
@@ -616,38 +653,50 @@
         }
 
         function escapeHtml(value) {
-            return String(value).replace(/[&<>"']/g, function(ch) {
-                return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch];
+            return String(value ?? '').replace(/[&<>"']/g, function(ch) {
+                return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
             });
         }
 
         function chonMau(element, gia, moTa) {
-            var item = element.closest('.product_noibat_item');
-            var ten = item.querySelector('h3 a').innerText;
-            var linkAnh = item.querySelector('img').src;
+            const item = element.closest('.product_noibat_item');
+            const ten = item.querySelector('h3 a').innerText;
+            const linkAnh = item.querySelector('img').src;
+
+            let imagesArr = [];
+            const rawAttr = item.getAttribute('data-images');
+            if (rawAttr) {
+                try {
+                    imagesArr = JSON.parse(decodeURIComponent(rawAttr));
+                } catch (e) {
+                    imagesArr = [];
+                }
+            }
+            if (!Array.isArray(imagesArr) || imagesArr.length === 0) {
+                const allProducts = typeof truyenthongProducts !== 'undefined' ? truyenthongProducts : [];
+                const found = allProducts.find(p => p.name === ten);
+                imagesArr = found ? getProductImages(found) : (linkAnh ? [linkAnh] : []);
+            }
+            imagesArr = imagesArr.filter(Boolean).slice(0, 4);
 
             localStorage.setItem('clickProdName', ten);
             localStorage.setItem('clickProdPrice', gia);
-            localStorage.setItem('clickProdImg', linkAnh);
+            localStorage.setItem('clickProdImg', imagesArr[0] || linkAnh);
+            localStorage.setItem('clickProdImages', JSON.stringify(imagesArr));
             localStorage.setItem('clickProdDesc', moTa || 'Chưa cập nhật');
 
             document.getElementById("prod-title").innerText = ten;
             document.getElementById("prod-price").innerText = gia;
-            document.getElementById("prod-image").src = linkAnh;
-            document.getElementById("prod-desc").innerHTML =
-                "<p><strong>Tên sản phẩm:</strong> " + escapeHtml(ten) + ".</p>" +
-                "<p><strong>Chi tiết:</strong> " + escapeHtml(moTa || 'Chưa cập nhật') + ".</p>" +
-                "<p><strong>Đơn giá hoàn thiện:</strong> " + escapeHtml(gia) + " (Bao gồm bao thư + ruột thiệp).</p>" +
-                "<p><strong>Chất liệu giấy:</strong> Giấy mỹ thuật cao cấp dày dặn, có vân mịn sang trọng.</p>" +
-                "<p><strong>Công nghệ in:</strong> Kỹ thuật số độ phân giải cao, mực in sắc nét không phai.</p>" +
-                "<p><strong>Ứng dụng:</strong> Phù hợp làm thiệp đám cưới, tiệc thành hôn, tiệc báo hỷ.</p>";
+            renderGallery(imagesArr, ten);
+            updateDetailDesc(ten, gia, moTa || 'Chưa cập nhật');
 
             document.querySelector('.product-detail-container').scrollIntoView({ behavior: "smooth", block: "center" });
         }
 
         function openImageModal(imgSrc) {
-            var modal = document.getElementById("imageModal");
-            var modalImg = document.getElementById("modalImage");
+            if (!imgSrc) return;
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
             modal.style.display = "flex";
             modalImg.src = imgSrc;
         }
@@ -657,16 +706,17 @@
         }
 
         function transferDataToOrderPage() {
-            var templateName = document.getElementById("prod-title").innerText;
-            var templatePrice = document.getElementById("prod-price").innerText;
-            
+            const templateName = document.getElementById("prod-title").innerText;
+            const templatePrice = document.getElementById("prod-price").innerText;
+
             localStorage.setItem("selectedTemplate", templateName);
             localStorage.setItem("selectedPrice", templatePrice);
-            
+
             window.location.href = "trang-dat-hang-v05.html";
         }
 
-  // 4. Tìm kiếm chuyển hướng sang tim-kiem.html?code=... (hỗ trợ cả ô PC và ô Mobile)
+        // Tìm kiếm chuyển hướng sang tim-kiem.html?code=... (hỗ trợ cả ô PC và ô Mobile)
+        document.addEventListener("DOMContentLoaded", function () {
             const searchConfigs = [
                 {
                     form: document.getElementById("search-form"),
@@ -702,9 +752,9 @@
                     });
                 }
             });
-        
+        });
 
-        // 5. Chia sẻ Facebook & Zalo (lấy link hiện tại động)
+        // Chia sẻ Facebook & Zalo (lấy link hiện tại động)
         function chiaSeFacebook() {
             const url = encodeURIComponent(window.location.href);
             window.open("https://www.facebook.com/sharer/sharer.php?u=" + url, "_blank", "noopener,noreferrer");
@@ -715,7 +765,8 @@
             window.open("https://zalo.me/share?url=" + url, "_blank", "noopener,noreferrer");
         }
     </script>
-      <!-- 6. ĐẾM LƯỢT XEM CHUNG BẰNG CLOUD FIRESTORE (CÁCH B) -->
+
+    <!-- ĐẾM LƯỢT XEM CHUNG BẰNG CLOUD FIRESTORE (CÁCH B) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import {
@@ -728,20 +779,19 @@
             serverTimestamp
         } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Thay bằng cấu hình Firebase thực tế của dự án bạn
-     const firebaseConfig = {
-  apiKey: "AIzaSyBdFVN7qwuxgkiHo9Fejr4K7pLceEu6gh4",
-  authDomain: "quan-ly-san-pham-55ec5.firebaseapp.com",
-  projectId: "quan-ly-san-pham-55ec5",
-  storageBucket: "quan-ly-san-pham-55ec5.firebasestorage.app",
-  messagingSenderId: "845660088489",
-  appId: "1:845660088489:web:49635a861acff93c6a21b8"
-};
+        const firebaseConfig = {
+            apiKey: "AIzaSyBdFVN7qwuxgkiHo9Fejr4K7pLceEu6gh4",
+            authDomain: "quan-ly-san-pham-55ec5.firebaseapp.com",
+            projectId: "quan-ly-san-pham-55ec5",
+            storageBucket: "quan-ly-san-pham-55ec5.firebasestorage.app",
+            messagingSenderId: "845660088489",
+            appId: "1:845660088489:web:49635a861acff93c6a21b8"
+        };
 
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        const maBaiViet = "chi-tiet-truyen-thong"; // Đổi mã riêng cho từng trang khi nhân bản
+        const maBaiViet = "chi-tiet-truyen-thong";
         const viewEl = document.getElementById("so-luot-xem");
         const docRef = doc(db, "page_views", maBaiViet);
 
@@ -787,4 +837,3 @@
     </script>
 </body>
 </html>
-

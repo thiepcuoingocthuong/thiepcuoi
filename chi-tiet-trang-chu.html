@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Trang Chủ</title>
+    <title>Chi Tiết Trang Chủ - Thiệp Cưới Ngọc Thương</title>
+    <meta name="description" content="Xem chi tiết mẫu thiệp cưới hiện đại kỹ thuật số tại Thiệp Cưới Ngọc Thương - Đồng Nai. Chất liệu giấy mỹ thuật, in sắc nét, tặng thiệp cưới online, giao hàng toàn quốc.">
+    <link rel="canonical" href="https://thiepcuoingocthuong.com/chi-tiet-trang-chu.html">
     <link rel="icon" type="image/png" href="anh/logo.png">
     <style>
         /* --- NHÚNG TOÀN BỘ CSS ĐỒNG BỘ TỪ TRANG CHỦ --- */
@@ -109,8 +111,46 @@
         /* --- CSS RIÊNG TRANG CHI TIẾT SẢN PHẨM --- */
         .product-detail-container { max-width: 1200px; margin: 40px auto 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 40px; box-sizing: border-box; }
         .detail-gallery { flex: 1.2; min-width: 350px; }
-        .detail-gallery img { width: 100%; max-height: 500px; object-fit: contain; background-color: #fafafa; border-radius: 6px; border: 1px solid #eef0f5; cursor: zoom-in; transition: opacity 0.2s; }
-        .detail-gallery img:hover { opacity: 0.95; }
+        .detail-gallery > img { width: 100%; max-height: 500px; object-fit: contain; background-color: #fafafa; border-radius: 6px; border: 1px solid #eef0f5; cursor: zoom-in; transition: opacity 0.2s; display: block; }
+        .detail-gallery > img:hover { opacity: 0.95; }
+
+        /* --- HÀNG ẢNH THU NHỎ (TỐI ĐA 4 ẢNH) --- */
+        .detail-thumbs {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .detail-thumbs.is-empty {
+            display: none;
+        }
+        .detail-thumb-item {
+            width: 78px;
+            height: 78px;
+            border-radius: 6px;
+            border: 2px solid #e2e6ec;
+            background: #fafafa;
+            padding: 2px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        .detail-thumb-item:hover {
+            border-color: #8b1e24;
+            transform: translateY(-2px);
+        }
+        .detail-thumb-item.active {
+            border-color: #8b1e24;
+            box-shadow: 0 0 0 2px rgba(139, 30, 36, 0.2);
+        }
+        .detail-thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+
         .detail-content { flex: 1; min-width: 350px; display: flex; flex-direction: column; }
         .detail-title { font-size: 1.8rem; font-weight: 600; margin-bottom: 15px; color: #111; }
         .detail-price { font-size: 1.8rem; color: #d93838; font-weight: bold; margin-bottom: 5px; }
@@ -239,112 +279,114 @@
             .mobile-dropdown { position: relative; }
             .mobile-dropdown-content { position: absolute; top: 100%; left: 0; background-color: #435247; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.25); border-radius: 6px; margin-top: 8px; overflow: hidden; z-index: 1000; }
             .mobile-dropdown-content a { color: #ffffff; padding: 10px 16px; text-decoration: none; display: block; font-size: 13.5px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+            .detail-gallery, .detail-content { min-width: 100%; }
+            .detail-thumb-item { width: 64px; height: 64px; }
         }
 
         /* --- KHUNG BỌC CARD SẢN PHẨM CÙNG LOẠI --- */
-.product_noibat_item .pro-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: #ffffff;
-    border: 1px solid #ece6e4;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 8px rgba(82, 100, 86, 0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
+        .product_noibat_item .pro-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: #ffffff;
+            border: 1px solid #ece6e4;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(82, 100, 86, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
 
-.product_noibat_item .pro-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(106, 7, 22, 0.12);
-    border-color: #d8b4b8;
-}
+        .product_noibat_item .pro-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(106, 7, 22, 0.12);
+            border-color: #d8b4b8;
+        }
 
-.product_noibat_item .img_pro {
-    border-radius: 7px;
-    margin-bottom: 10px;
-    background: #faf8f7;
-}
+        .product_noibat_item .img_pro {
+            border-radius: 7px;
+            margin-bottom: 10px;
+            background: #faf8f7;
+        }
 
-.product_noibat_item .img_pro img {
-    height: 210px;
-}
+        .product_noibat_item .img_pro img {
+            height: 210px;
+        }
 
-.product_noibat_item .pro-card:hover .img_pro img {
-    transform: scale(1.05);
-}
+        .product_noibat_item .pro-card:hover .img_pro img {
+            transform: scale(1.05);
+        }
 
-.product_noibat_item h3 {
-    margin: 0 0 8px 0;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4;
-    height: 39px;
-    overflow: hidden;
-}
+        .product_noibat_item h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            height: 39px;
+            overflow: hidden;
+        }
 
-.product_noibat_item .box_price_box {
-    margin-top: auto;
-    padding-top: 6px;
-    border-top: 1px dashed #f0eaea;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-}
+        .product_noibat_item .box_price_box {
+            margin-top: auto;
+            padding-top: 6px;
+            border-top: 1px dashed #f0eaea;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
 
-.product_noibat_item .box_price_box strong {
-    color: #c82333;
-    font-size: 14.5px;
-}
-/*-------------------Thanh menu Mobile------------*/
-/* Mặc định ẩn trên PC */
-.mobile-search-bar {
-    display: none;
-}
+        .product_noibat_item .box_price_box strong {
+            color: #c82333;
+            font-size: 14.5px;
+        }
 
-@media (max-width: 768px) {
-    .mobile-search-bar {
-        display: block;
-        padding: 8px 15px 4px 15px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+        /*-------------------Thanh menu Mobile------------*/
+        .mobile-search-bar {
+            display: none;
+        }
 
-    .mobile-search-bar form {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 40px;
-        background: #ffffff;
-        border: 1px solid #d8c4bc;
-        border-radius: 22px;
-        overflow: hidden;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    }
+        @media (max-width: 768px) {
+            .mobile-search-bar {
+                display: block;
+                padding: 8px 15px 4px 15px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
 
-    .mobile-search-bar input {
-        flex: 1;
-        min-width: 0;
-        height: 100%;
-        padding: 0 14px;
-        border: none;
-        outline: none;
-        background: transparent;
-        color: #333;
-        font-size: 14px;
-    }
+            .mobile-search-bar form {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                background: #ffffff;
+                border: 1px solid #d8c4bc;
+                border-radius: 22px;
+                overflow: hidden;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            }
 
-    .mobile-search-bar button {
-        height: 100%;
-        padding: 0 14px;
-        border: none;
-        background: #526456;
-        color: #ffffff;
-        cursor: pointer;
-        font-size: 15px;
-    }
-}
+            .mobile-search-bar input {
+                flex: 1;
+                min-width: 0;
+                height: 100%;
+                padding: 0 14px;
+                border: none;
+                outline: none;
+                background: transparent;
+                color: #333;
+                font-size: 14px;
+            }
+
+            .mobile-search-bar button {
+                height: 100%;
+                padding: 0 14px;
+                border: none;
+                background: #526456;
+                color: #ffffff;
+                cursor: pointer;
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -383,6 +425,7 @@
             <li class="menu-item">
                 <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Cưới ▾</a>
                 <ul class="dropdown-menu">
+                    <li><a href="thiepcuoi-kts-dq-06.html">Thiệp Cưới KTS DQ-06</a></li>
                     <li><a href="thiepcuoi-hiendai.html">Thiệp Cưới Hiện Đại</a></li>
                     <li><a href="thiepcuoi-truyenthong.html">Thiệp Cưới Truyền Thống</a></li>
                     <li><a href="thiepcuoi-docquyen.html">Thiệp Cưới Độc Quyền KTS</a></li>
@@ -415,6 +458,7 @@
             <summary class="mobile-dropdown-btn">Sản Phẩm ▾</summary>
             <div class="mobile-dropdown-content">
                 <a href="index.html">📌 Tất Cả Mẫu Thiệp</a>
+                <a href="thiepcuoi-kts-dq-06.html">Thiệp Cưới KTS DQ-06</a>
                 <a href="thiepcuoi-hiendai.html">Mẫu Thiệp Hiện Đại</a>
                 <a href="thiepcuoi-truyenthong.html">Mẫu Thiệp Truyền Thống</a>
                 <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Độc Quyền KTS</a>
@@ -438,6 +482,7 @@
     <main class="product-detail-container">
         <div class="detail-gallery">
             <img src="" alt="Hình ảnh thiệp cưới" id="prod-image" onclick="openImageModal(this.src)" title="Click để phóng to ảnh">
+            <div class="detail-thumbs is-empty" id="prod-thumbs"></div>
         </div>
         <div class="detail-content">
             <h2 class="detail-title" id="prod-title">Đang tải tên sản phẩm...</h2>
@@ -473,12 +518,13 @@
         </div>
 
         <div class="product_noibat_box" id="product-list">
-            <!-- Sản phẩm được render tự động từ file data-chitiet-trangchu.js -->
+            <!-- Sản phẩm được render tự động từ file data-trangchu.js -->
         </div>
 
         <!-- Thanh phân trang -->
         <div class="pagination" id="pagination"></div>
-                   <!-- UTILITY BAR (LƯỢT XEM & CHIA SẺ) -->
+
+        <!-- UTILITY BAR (LƯỢT XEM & CHIA SẺ) -->
         <div class="vung-tien-ich-bai-viet">
             <div class="o-luot-xem">
                 👁️ Lượt xem: <span id="so-luot-xem">Đang tải...</span>
@@ -489,6 +535,7 @@
                 <button onclick="chiaSeFacebook()" class="nut-cs nut-fb">🔵 Facebook</button>
                 <button onclick="chiaSeZalo()" class="nut-cs nut-zalo">🟢 Zalo</button>
             </div>
+        </div>
     </section>
 
     <!-------------------------- 4. CHÂN TRANG (FOOTER) ------------------------>
@@ -537,8 +584,52 @@
         const itemsPerPage = 20;
         let currentPage = 1;
         let currentTabFilter = "all";
+        let currentRenderedList = [];
 
-        // Chuyển object tabProducts sang mảng sản phẩm phẳng (hỗ trợ cả trường hợp tabProducts là object hoặc mảng)
+        function getHomeItemImages(item) {
+            if (!item) return [];
+            if (Array.isArray(item.images) && item.images.length > 0) {
+                return item.images.map(s => String(s || "").trim()).filter(Boolean).slice(0, 4);
+            }
+            const mainImg = String(item.img || item.image || "").trim();
+            return mainImg ? [mainImg] : [];
+        }
+
+        function renderDetailGallery(imagesList, fallbackImg) {
+            const mainImgEl = document.getElementById("prod-image");
+            const thumbsEl = document.getElementById("prod-thumbs");
+            const cleanList = (Array.isArray(imagesList) ? imagesList : [])
+                .map(u => String(u || "").trim())
+                .filter(Boolean)
+                .slice(0, 4);
+
+            if (cleanList.length === 0 && fallbackImg) {
+                cleanList.push(String(fallbackImg).trim());
+            }
+
+            mainImgEl.src = cleanList[0] || "";
+
+            if (cleanList.length <= 1) {
+                thumbsEl.innerHTML = "";
+                thumbsEl.classList.add("is-empty");
+                return;
+            }
+
+            thumbsEl.classList.remove("is-empty");
+            thumbsEl.innerHTML = cleanList.map((url, idx) => `
+                <div class="detail-thumb-item ${idx === 0 ? "active" : ""}" onclick="switchDetailMainImage(this, '${escapeHtml(url)}')" title="Xem ảnh ${idx + 1}">
+                    <img src="${url}" alt="Ảnh phụ ${idx + 1}">
+                </div>
+            `).join("");
+        }
+
+        function switchDetailMainImage(thumbEl, imgUrl) {
+            document.getElementById("prod-image").src = imgUrl;
+            document.querySelectorAll("#prod-thumbs .detail-thumb-item").forEach(el => el.classList.remove("active"));
+            if (thumbEl) thumbEl.classList.add("active");
+        }
+
+        // Chuyển object tabProductsData sang mảng sản phẩm phẳng
         function getAllTrangChuProducts(tabKey = "all") {
             if (typeof tabProductsData === "undefined" || !tabProductsData) return [];
             if (Array.isArray(tabProductsData)) return tabProductsData;
@@ -578,14 +669,40 @@
             if (allProducts.length > 0) {
                 const firstProd = allProducts[0];
                 const defaultTitle = getItemTitle(firstProd);
-                const name = localStorage.getItem("clickProdName") || defaultTitle;
+                const savedCode = localStorage.getItem("clickProdCode") || "";
+                const savedName = localStorage.getItem("clickProdName") || "";
+                const savedImg = localStorage.getItem("clickProdImg") || "";
+
+                const matchedProd = allProducts.find(p =>
+                    (savedCode && String(p.code || "").trim() === savedCode.trim()) ||
+                    (savedName && getItemTitle(p) === savedName) ||
+                    (savedImg && getHomeItemImages(p)[0] === savedImg)
+                );
+
+                const name = savedName || defaultTitle;
                 const price = localStorage.getItem("clickProdPrice") || firstProd.price;
-                const imgUrl = localStorage.getItem("clickProdImg") || firstProd.img;
+                const imgUrl = savedImg || getHomeItemImages(firstProd)[0] || "";
                 const description = localStorage.getItem("clickProdDesc") || firstProd.desc;
+
+                let imagesList = [];
+                try {
+                    const parsed = JSON.parse(localStorage.getItem("clickProdImages") || "[]");
+                    if (Array.isArray(parsed) && parsed.length > 0) {
+                        imagesList = parsed;
+                    }
+                } catch (e) {}
+
+                if (imagesList.length <= 1 && matchedProd) {
+                    const fromData = getHomeItemImages(matchedProd);
+                    if (fromData.length > 0) imagesList = fromData;
+                }
+                if (imagesList.length === 0 && imgUrl) {
+                    imagesList = [imgUrl];
+                }
 
                 document.getElementById("prod-title").innerText = name;
                 document.getElementById("prod-price").innerText = price;
-                document.getElementById("prod-image").src = imgUrl;
+                renderDetailGallery(imagesList, imgUrl);
                 document.getElementById("prod-desc").innerHTML = buildDescHtml(name, price, description);
             }
 
@@ -604,10 +721,12 @@
             const listData = getAllTrangChuProducts(currentTabFilter);
             const start = (page - 1) * itemsPerPage;
             const end = start + itemsPerPage;
-            const paginatedItems = listData.slice(start, end);
+            currentRenderedList = listData.slice(start, end);
 
-            const productListHTML = paginatedItems.map(item => {
+            const productListHTML = currentRenderedList.map((item, idx) => {
                 const itemTitle = getItemTitle(item);
+                const imgs = getHomeItemImages(item);
+                const coverImg = imgs[0] || "";
                 const badgeHtml = item.badgeText
                     ? `<span class="pro-badge ${escapeHtml(item.badge || "")}">${escapeHtml(item.badgeText)}</span>`
                     : "";
@@ -618,11 +737,11 @@
                 return `
                     <div class="product_noibat_item" data-description="${escapeHtml(item.desc || "")}">
                         <div class="pro-card">
-                            <a class="img_pro" href="#" onclick="event.preventDefault(); chonMau(this, '${escapeHtml(item.price)}', '${escapeHtml(item.desc || "")}');">
+                            <a class="img_pro" href="#" onclick="event.preventDefault(); chonMauTheoIndex(${idx});">
                                 ${badgeHtml}
-                                <img src="${item.img}" alt="${escapeHtml(itemTitle)}">
+                                <img src="${coverImg}" alt="${escapeHtml(itemTitle)}">
                             </a>
-                            <h3><a href="#" class="text-split" onclick="event.preventDefault(); chonMau(this, '${escapeHtml(item.price)}', '${escapeHtml(item.desc || "")}');">${escapeHtml(itemTitle)}</a></h3>
+                            <h3><a href="#" class="text-split" onclick="event.preventDefault(); chonMauTheoIndex(${idx});">${escapeHtml(itemTitle)}</a></h3>
                             <div class="box_price_box">
                                 <strong>${escapeHtml(item.price)}</strong>
                                 ${oldPriceHtml}
@@ -658,6 +777,31 @@
             });
         }
 
+        function chonMauTheoIndex(idx) {
+            const item = currentRenderedList[idx];
+            if (!item) return;
+
+            const ten = getItemTitle(item);
+            const gia = item.price || "Liên hệ";
+            const moTa = item.desc || "Chưa cập nhật";
+            const imgs = getHomeItemImages(item);
+            const linkAnh = imgs[0] || "";
+
+            localStorage.setItem("clickProdCode", item.code || "");
+            localStorage.setItem("clickProdName", ten);
+            localStorage.setItem("clickProdPrice", gia);
+            localStorage.setItem("clickProdImg", linkAnh);
+            localStorage.setItem("clickProdImages", JSON.stringify(imgs));
+            localStorage.setItem("clickProdDesc", moTa);
+
+            document.getElementById("prod-title").innerText = ten;
+            document.getElementById("prod-price").innerText = gia;
+            renderDetailGallery(imgs, linkAnh);
+            document.getElementById("prod-desc").innerHTML = buildDescHtml(ten, gia, moTa);
+
+            document.querySelector(".product-detail-container").scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
         function chonMau(element, gia, moTa) {
             const item = element.closest(".product_noibat_item");
             const ten = item.querySelector("h3 a").innerText;
@@ -666,11 +810,12 @@
             localStorage.setItem("clickProdName", ten);
             localStorage.setItem("clickProdPrice", gia);
             localStorage.setItem("clickProdImg", linkAnh);
+            localStorage.setItem("clickProdImages", JSON.stringify([linkAnh]));
             localStorage.setItem("clickProdDesc", moTa || "Chưa cập nhật");
 
             document.getElementById("prod-title").innerText = ten;
             document.getElementById("prod-price").innerText = gia;
-            document.getElementById("prod-image").src = linkAnh;
+            renderDetailGallery([linkAnh], linkAnh);
             document.getElementById("prod-desc").innerHTML = buildDescHtml(ten, gia, moTa || "Chưa cập nhật");
 
             document.querySelector(".product-detail-container").scrollIntoView({ behavior: "smooth", block: "center" });
@@ -697,45 +842,44 @@
             window.location.href = "trang-dat-hang-v05.html";
         }
 
-  // 4. Tìm kiếm chuyển hướng sang tim-kiem.html?code=... (hỗ trợ cả ô PC và ô Mobile)
-            const searchConfigs = [
-                {
-                    form: document.getElementById("search-form"),
-                    input: document.getElementById("search-input"),
-                    btn: document.getElementById("search-btn")
-                },
-                {
-                    form: document.getElementById("mobile-search-form"),
-                    input: document.getElementById("mobile-search-input"),
-                    btn: document.getElementById("mobile-search-btn")
-                }
-            ];
-
-            function goSearchFrom(inputEl) {
-                if (!inputEl) return;
-                const code = inputEl.value.trim();
-                window.location.href = code
-                    ? `tim-kiem.html?code=${encodeURIComponent(code)}`
-                    : "tim-kiem.html";
+        // Tìm kiếm chuyển hướng sang tim-kiem.html?code=... (hỗ trợ cả ô PC và ô Mobile)
+        const searchConfigs = [
+            {
+                form: document.getElementById("search-form"),
+                input: document.getElementById("search-input"),
+                btn: document.getElementById("search-btn")
+            },
+            {
+                form: document.getElementById("mobile-search-form"),
+                input: document.getElementById("mobile-search-input"),
+                btn: document.getElementById("mobile-search-btn")
             }
+        ];
 
-            searchConfigs.forEach(cfg => {
-                if (cfg.form && cfg.input) {
-                    cfg.form.addEventListener("submit", function (e) {
-                        e.preventDefault();
-                        goSearchFrom(cfg.input);
-                    });
-                }
-                if (cfg.btn && cfg.input) {
-                    cfg.btn.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        goSearchFrom(cfg.input);
-                    });
-                }
-            });
-        
+        function goSearchFrom(inputEl) {
+            if (!inputEl) return;
+            const code = inputEl.value.trim();
+            window.location.href = code
+                ? `tim-kiem.html?code=${encodeURIComponent(code)}`
+                : "tim-kiem.html";
+        }
 
-        // 5. Chia sẻ Facebook & Zalo (lấy link hiện tại động)
+        searchConfigs.forEach(cfg => {
+            if (cfg.form && cfg.input) {
+                cfg.form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    goSearchFrom(cfg.input);
+                });
+            }
+            if (cfg.btn && cfg.input) {
+                cfg.btn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    goSearchFrom(cfg.input);
+                });
+            }
+        });
+
+        // Chia sẻ Facebook & Zalo
         function chiaSeFacebook() {
             const url = encodeURIComponent(window.location.href);
             window.open("https://www.facebook.com/sharer/sharer.php?u=" + url, "_blank", "noopener,noreferrer");
@@ -746,7 +890,8 @@
             window.open("https://zalo.me/share?url=" + url, "_blank", "noopener,noreferrer");
         }
     </script>
-      <!-- 6. ĐẾM LƯỢT XEM CHUNG BẰNG CLOUD FIRESTORE (CÁCH B) -->
+
+    <!-- 6. ĐẾM LƯỢT XEM CHUNG BẰNG CLOUD FIRESTORE (CÁCH B) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import {
@@ -759,20 +904,19 @@
             serverTimestamp
         } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Thay bằng cấu hình Firebase thực tế của dự án bạn
-     const firebaseConfig = {
-  apiKey: "AIzaSyBdFVN7qwuxgkiHo9Fejr4K7pLceEu6gh4",
-  authDomain: "quan-ly-san-pham-55ec5.firebaseapp.com",
-  projectId: "quan-ly-san-pham-55ec5",
-  storageBucket: "quan-ly-san-pham-55ec5.firebasestorage.app",
-  messagingSenderId: "845660088489",
-  appId: "1:845660088489:web:49635a861acff93c6a21b8"
-};
+        const firebaseConfig = {
+            apiKey: "AIzaSyBdFVN7qwuxgkiHo9Fejr4K7pLceEu6gh4",
+            authDomain: "quan-ly-san-pham-55ec5.firebaseapp.com",
+            projectId: "quan-ly-san-pham-55ec5",
+            storageBucket: "quan-ly-san-pham-55ec5.firebasestorage.app",
+            messagingSenderId: "845660088489",
+            appId: "1:845660088489:web:49635a861acff93c6a21b8"
+        };
 
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        const maBaiViet = "chi-tiet-trang-chu"; // Đổi mã riêng cho từng trang khi nhân bản
+        const maBaiViet = "chi-tiet-trang-chu";
         const viewEl = document.getElementById("so-luot-xem");
         const docRef = doc(db, "page_views", maBaiViet);
 
@@ -818,4 +962,3 @@
     </script>
 </body>
 </html>
-
