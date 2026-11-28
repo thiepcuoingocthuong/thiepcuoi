@@ -603,6 +603,7 @@
             <li class="menu-item">
                 <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Cưới ▾</a>
                 <ul class="dropdown-menu">
+                    <li><a href="thiepcuoi-kts-dq-06.html">Thiệp Cưới KTS DQ-06</a></li>
                     <li><a href="thiepcuoi-hiendai.html">Thiệp Cưới Hiện Đại</a></li>
                     <li><a href="thiepcuoi-truyenthong.html">Thiệp Cưới Truyền Thống</a></li>
                     <li><a href="thiepcuoi-docquyen.html">Thiệp Cưới Độc Quyền KTS</a></li>
@@ -635,6 +636,7 @@
             <summary class="mobile-dropdown-btn">Sản Phẩm ▾</summary>
             <div class="mobile-dropdown-content">
                 <a href="index.html">📌 Tất Cả Mẫu Thiệp</a>
+                <a href="thiepcuoi-kts-dq-06.html">Thiệp Cưới KTS DQ-06</a>
                 <a href="thiepcuoi-hiendai.html">Mẫu Thiệp Hiện Đại</a>
                 <a href="thiepcuoi-truyenthong.html">Mẫu Thiệp Truyền Thống</a>
                 <a href="thiepcuoi-docquyen.html">Mẫu Thiệp Độc Quyền KTS</a>
@@ -764,8 +766,24 @@
 
     <script src="san-pham/data-trangchu.js"></script>
     <script>
+        let currentHomeTab = "best-seller";
+
         function escapeHtml(str) {
-            return String(str).replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+            return String(str ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/'/g, "&#39;")
+                .replace(/"/g, "&quot;");
+        }
+
+        function getHomeItemImages(item) {
+            if (!item) return [];
+            if (Array.isArray(item.images) && item.images.length > 0) {
+                return item.images.map(s => String(s || "").trim()).filter(Boolean).slice(0, 4);
+            }
+            const mainImg = String(item.img || item.image || "").trim();
+            return mainImg ? [mainImg] : [];
         }
 
         function createNewBadgeHtml(text) {
@@ -794,25 +812,29 @@
         }
 
         function renderProducts(tabKey) {
+            currentHomeTab = tabKey;
             const container = document.getElementById("productGridContainer");
             const items = (typeof tabProductsData !== "undefined" && tabProductsData[tabKey]) ? tabProductsData[tabKey] : [];
 
-            container.innerHTML = items.map(item => {
+            container.innerHTML = items.map((item, idx) => {
                 const isNewBadge = item.badge === "new-badge";
                 const boxClass = isNewBadge ? "" : (item.badge || "");
                 const saleAttr = item.badge === "sale-badge" ? `data-sale="${escapeHtml(item.badgeText)}"` : "";
+                const imgs = getHomeItemImages(item);
+                const coverImg = imgs[0] || "";
+                const titleText = item.title || item.name || "";
 
                 return `
-                    <div class="product-card" onclick="goToDetailPage('${escapeHtml(item.title)}', '${escapeHtml(item.price)}', '${escapeHtml(item.img)}', '${escapeHtml(item.desc)}')">
+                    <div class="product-card" onclick="openHomeProduct(${idx})">
                         <div class="prod-img-wrap">
                             ${isNewBadge ? createNewBadgeHtml(item.badgeText) : ""}
                             <div class="prod-img-box ${escapeHtml(boxClass)}" ${saleAttr}>
-                                <img src="${item.img}" alt="${escapeHtml(item.title)}">
+                                <img src="${coverImg}" alt="${escapeHtml(titleText)}">
                             </div>
                         </div>
                         <div class="prod-info">
                             <span class="prod-code">Mã: ${escapeHtml(item.code)}</span>
-                            <h4 class="prod-title">${escapeHtml(item.title)}</h4>
+                            <h4 class="prod-title">${escapeHtml(titleText)}</h4>
                             <div class="prod-rating">⭐⭐⭐⭐⭐</div>
                             <div class="prod-price-box">
                                 <span class="price-current">${escapeHtml(item.price)}</span>
@@ -825,10 +847,30 @@
             }).join('');
         }
 
-        function goToDetailPage(name, price, img, desc) {
+        function openHomeProduct(idx) {
+            const items = (typeof tabProductsData !== "undefined" && tabProductsData[currentHomeTab]) ? tabProductsData[currentHomeTab] : [];
+            const item = items[idx];
+            if (!item) return;
+
+            const imgs = getHomeItemImages(item);
+            const coverImg = imgs[0] || "";
+            const titleText = item.title || item.name || "";
+
+            localStorage.setItem('clickProdCode', item.code || "");
+            localStorage.setItem('clickProdName', titleText);
+            localStorage.setItem('clickProdPrice', item.price || "Liên hệ");
+            localStorage.setItem('clickProdImg', coverImg);
+            localStorage.setItem('clickProdImages', JSON.stringify(imgs));
+            localStorage.setItem('clickProdDesc', item.desc || "");
+            window.location.href = "chi-tiet-trang-chu.html";
+        }
+
+        function goToDetailPage(name, price, img, desc, imagesList) {
+            const imgs = Array.isArray(imagesList) && imagesList.length ? imagesList : (img ? [img] : []);
             localStorage.setItem('clickProdName', name);
             localStorage.setItem('clickProdPrice', price);
-            localStorage.setItem('clickProdImg', img);
+            localStorage.setItem('clickProdImg', imgs[0] || img || "");
+            localStorage.setItem('clickProdImages', JSON.stringify(imgs));
             localStorage.setItem('clickProdDesc', desc);
             window.location.href = "chi-tiet-trang-chu.html";
         }
