@@ -1,5 +1,18 @@
-// File: assets/js/data-hiendai.js
-const hienDaiProducts = [
+// Dữ liệu danh mục: 2. Thiệp Cưới Hiện Đại
+var hienDaiProducts = [
+    {
+        code: "HHY-6189",
+        name: "thiệp KTS",
+        price: "5000đ",
+        image: "https://ducquyencards.com/upload/images/2026/07/1784874808-DQBTN114657KTVangcopy.jpg",
+        images: [
+            "https://ducquyencards.com/upload/images/2026/07/1784874808-DQBTN114657KTVangcopy.jpg",
+            "https://ducquyencards.com/upload/images/2026/07/1784874808-DQBTN114657KTVangphu1copy.jpg",
+            "https://ducquyencards.com/upload/images/2026/07/1784874808-DQBTN114657KTVangphu2copy.jpg"
+        ],
+        detailUrl: "chi-tiet-hien-dai.html",
+        desc: "sảm phẩm đẹp"
+    },
     {
         code: "HHY-KTS-9101",
         name: "Mẫu thiệp kỹ thuật số HHY-KTS-9101",

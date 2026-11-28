@@ -31,16 +31,88 @@
     .btn-success { background: #1f7a4c; color: #fff; }
     .btn-danger { background: #c62828; color: #fff; padding: 5px 10px; font-size: 12px; }
     .btn-edit { background: #1565c0; color: #fff; padding: 5px 10px; font-size: 12px; }
-    .preview-img { width: 110px; height: 110px; object-fit: cover; border-radius: 6px; border: 1px solid #ddd; margin-top: 8px; display: none; }
-    .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    th, td { border-bottom: 1px solid #e5e5e5; padding: 8px; text-align: left; vertical-align: middle; }
-    td img { width: 48px; height: 48px; object-fit: cover; border-radius: 4px; }
     .status { margin-top: 8px; font-size: 13px; color: #1f7a4c; min-height: 18px; }
     .badge { background: #eee; padding: 3px 8px; border-radius: 12px; font-size: 12px; font-weight: normal; color: #444; }
     .tag-pill { display: inline-block; background: #ffe8ea; color: #8b1e24; font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
     textarea.code-out { font-family: Consolas, monospace; font-size: 12px; height: 220px; margin-top: 12px; background: #1e1e1e; color: #d4d4d4; }
     .hidden { display: none !important; }
+
+    /* Khu vực quản lý tối đa 4 ảnh */
+    .multi-img-panel { background: #fff; border: 1px dashed #c8c8c8; border-radius: 8px; padding: 10px; margin-top: 6px; }
+    .img-slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+    .img-slot {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f3f3f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+      text-align: center;
+    }
+    .img-slot.is-main { border-color: #8b1e24; box-shadow: 0 0 0 1px #8b1e24; }
+    .img-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .img-slot .slot-tag {
+      position: absolute;
+      bottom: 3px;
+      left: 3px;
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    .img-slot.is-main .slot-tag { background: #8b1e24; }
+    .img-slot .slot-del {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      border-radius: 50%;
+      background: rgba(198, 40, 40, 0.9);
+      color: #fff;
+      font-size: 11px;
+      line-height: 18px;
+      text-align: center;
+    }
+    .img-slot .slot-top {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: rgba(21, 101, 192, 0.88);
+      color: #fff;
+      font-size: 10px;
+    }
+    .url-inputs-list { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+    .url-input-row { display: flex; align-items: center; gap: 6px; }
+    .url-input-row span { font-size: 12px; font-weight: bold; color: #555; min-width: 44px; }
+    .url-input-row input { font-size: 12.5px; padding: 6px 8px; }
+
+    .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { border-bottom: 1px solid #e5e5e5; padding: 8px; text-align: left; vertical-align: middle; }
+    .thumb-wrap { position: relative; display: inline-block; width: 48px; height: 48px; }
+    .thumb-wrap img { width: 48px; height: 48px; object-fit: cover; border-radius: 4px; display: block; }
+    .thumb-count {
+      position: absolute;
+      bottom: -3px;
+      right: -4px;
+      background: #8b1e24;
+      color: #fff;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 1px 4px;
+      border-radius: 8px;
+      border: 1px solid #fff;
+    }
   </style>
 </head>
 <body>
@@ -82,13 +154,38 @@
         <option value="anh-mau-thiep-cuoi">Preset TK 2 (anh-mau-thiep-cuoi)</option>
       </datalist>
 
-      <label>Chọn ảnh từ máy tính</label>
-      <input type="file" id="fileInput" accept="image/*" />
-      <img id="previewImg" class="preview-img" alt="Xem trước ảnh" />
-      <div id="uploadStatus" class="status"></div>
+      <div class="label-row">
+        <label>Hình ảnh sản phẩm (Tối đa 4 ảnh)</label>
+        <button type="button" class="btn-mini" id="clearImgsBtn">Xóa hết ảnh</button>
+      </div>
+      <div class="multi-img-panel">
+        <input type="file" id="fileInput" accept="image/*" multiple />
+        <div style="font-size: 11.5px; color: #666; margin-top: 4px;">
+          Có thể chọn 1 hoặc nhiều ảnh cùng lúc (tối đa 4 ảnh). <strong>Ảnh 1</strong> làm ảnh chính (<code>img</code>); các ảnh còn lại hiện ở trang chi tiết.
+        </div>
+        <div id="uploadStatus" class="status"></div>
 
-      <label>Link ảnh (img)</label>
-      <input type="text" id="imageUrl" placeholder="https://res.cloudinary.com/... hoặc anh/banner.png" />
+        <div class="img-slots" id="imgSlots"></div>
+
+        <div class="url-inputs-list">
+          <div class="url-input-row">
+            <span>Ảnh 1*:</span>
+            <input type="text" id="imageUrl1" placeholder="Link ảnh chính (bắt buộc)..." />
+          </div>
+          <div class="url-input-row">
+            <span>Ảnh 2:</span>
+            <input type="text" id="imageUrl2" placeholder="Link ảnh phụ 2 (tùy chọn)..." />
+          </div>
+          <div class="url-input-row">
+            <span>Ảnh 3:</span>
+            <input type="text" id="imageUrl3" placeholder="Link ảnh phụ 3 (tùy chọn)..." />
+          </div>
+          <div class="url-input-row">
+            <span>Ảnh 4:</span>
+            <input type="text" id="imageUrl4" placeholder="Link ảnh phụ 4 (tùy chọn)..." />
+          </div>
+        </div>
+      </div>
 
       <label>Mã sản phẩm (code)</label>
       <input type="text" id="code" placeholder="Ví dụ: NT-2026C" />
@@ -110,7 +207,7 @@
       <div class="two-col">
         <div>
           <label>Class nhãn (badge)</label>
-          <input type="text" id="badge" placeholder="sale-badge hoặc hot-badge" />
+          <input type="text" id="badge" placeholder="sale-badge, hot-badge hoặc new-badge" />
         </div>
         <div>
           <label>Chữ trên nhãn (badgeText)</label>
@@ -138,7 +235,7 @@
         </div>
       </div>
 
-      <div style="max-height: 420px; overflow-y: auto;">
+      <div style="max-height: 480px; overflow-y: auto;">
         <table>
           <thead>
             <tr>
@@ -192,9 +289,13 @@
     useTk1Btn: document.getElementById("useTk1Btn"),
     useTk2Btn: document.getElementById("useTk2Btn"),
     fileInput: document.getElementById("fileInput"),
-    previewImg: document.getElementById("previewImg"),
+    clearImgsBtn: document.getElementById("clearImgsBtn"),
+    imgSlots: document.getElementById("imgSlots"),
     uploadStatus: document.getElementById("uploadStatus"),
-    imageUrl: document.getElementById("imageUrl"),
+    imageUrl1: document.getElementById("imageUrl1"),
+    imageUrl2: document.getElementById("imageUrl2"),
+    imageUrl3: document.getElementById("imageUrl3"),
+    imageUrl4: document.getElementById("imageUrl4"),
     code: document.getElementById("code"),
     title: document.getElementById("title"),
     price: document.getElementById("price"),
@@ -212,6 +313,8 @@
     copyJsBtn: document.getElementById("copyJsBtn"),
     toggleCodeBtn: document.getElementById("toggleCodeBtn")
   };
+
+  const urlInputs = [els.imageUrl1, els.imageUrl2, els.imageUrl3, els.imageUrl4];
 
   TABS.forEach(t => {
     const opt = document.createElement("option");
@@ -251,6 +354,79 @@
   els.uploadPreset.addEventListener("input", () => {
     localStorage.setItem("cld_preset", els.uploadPreset.value.trim());
     updateAccountBtnState();
+  });
+
+  // --- QUẢN LÝ TỐI ĐA 4 ẢNH ---
+  function getItemImages(item) {
+    if (!item) return [];
+    if (Array.isArray(item.images) && item.images.length > 0) {
+      return item.images.map(s => String(s || "").trim()).filter(Boolean).slice(0, 4);
+    }
+    const mainImg = String(item.img || item.image || "").trim();
+    return mainImg ? [mainImg] : [];
+  }
+
+  function getFormImagesRaw() {
+    return urlInputs.map(inp => inp.value.trim());
+  }
+
+  function getFormImagesClean() {
+    return urlInputs.map(inp => inp.value.trim()).filter(Boolean).slice(0, 4);
+  }
+
+  function setFormImages(arr) {
+    const clean = (Array.isArray(arr) ? arr : []).map(s => String(s || "").trim()).filter(Boolean).slice(0, 4);
+    urlInputs.forEach((inp, idx) => {
+      inp.value = clean[idx] || "";
+    });
+    renderImageSlots();
+  }
+
+  function renderImageSlots() {
+    const raw = getFormImagesRaw();
+    els.imgSlots.innerHTML = "";
+
+    for (let i = 0; i < 4; i++) {
+      const url = raw[i];
+      const slot = document.createElement("div");
+      slot.className = "img-slot" + (i === 0 ? " is-main" : "");
+
+      if (url) {
+        slot.innerHTML = `
+          <img src="${url}" alt="Ảnh ${i + 1}" onerror="this.style.opacity='0.3'">
+          <span class="slot-tag">${i === 0 ? "Ảnh 1 (Chính)" : "Ảnh " + (i + 1)}</span>
+          ${i > 0 ? `<button type="button" class="slot-top" title="Đặt làm ảnh chính" onclick="promoteImage(${i})">★1</button>` : ""}
+          <button type="button" class="slot-del" title="Xóa ảnh này" onclick="removeImageSlot(${i})">×</button>
+        `;
+      } else {
+        slot.innerHTML = `<span>${i === 0 ? "Ảnh 1<br>(Chính)" : "Trống<br>(Ảnh " + (i + 1) + ")"}</span>`;
+      }
+
+      els.imgSlots.appendChild(slot);
+    }
+  }
+
+  window.removeImageSlot = function(idx) {
+    const arr = getFormImagesRaw();
+    arr.splice(idx, 1);
+    setFormImages(arr);
+  };
+
+  window.promoteImage = function(idx) {
+    const arr = getFormImagesRaw();
+    const chosen = arr[idx];
+    if (!chosen) return;
+    arr.splice(idx, 1);
+    arr.unshift(chosen);
+    setFormImages(arr);
+  };
+
+  urlInputs.forEach(inp => inp.addEventListener("input", renderImageSlots));
+
+  els.clearImgsBtn.addEventListener("click", () => {
+    setFormImages([]);
+    els.fileInput.value = "";
+    els.uploadStatus.textContent = "";
   });
 
   function getCurrentList() {
@@ -304,20 +480,10 @@
     renderAll();
   });
 
-  function showPreview(url) {
-    if (url) {
-      els.previewImg.src = url;
-      els.previewImg.style.display = "block";
-    } else {
-      els.previewImg.style.display = "none";
-    }
-  }
-
-  els.imageUrl.addEventListener("input", () => showPreview(els.imageUrl.value.trim()));
-
+  // Upload 1 hoặc nhiều ảnh (tối đa 4 ảnh) lên Cloudinary
   els.fileInput.addEventListener("change", async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+    const files = Array.from(e.target.files || []);
+    if (!files.length) return;
 
     const cloudName = els.cloudName.value.trim();
     const uploadPreset = els.uploadPreset.value.trim();
@@ -327,49 +493,83 @@
       return;
     }
 
-    els.uploadStatus.style.color = "#1565c0";
-    els.uploadStatus.textContent = "Đang tải ảnh lên Cloudinary...";
-
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", uploadPreset);
-
-    try {
-      const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-        method: "POST",
-        body: formData
-      });
-      const data = await res.json();
-      if (!res.ok || !data.secure_url) {
-        throw new Error(data.error?.message || "Upload thất bại");
-      }
-      els.imageUrl.value = data.secure_url;
-      showPreview(data.secure_url);
-      els.uploadStatus.style.color = "#1f7a4c";
-      els.uploadStatus.textContent = "Upload thành công! Đã lấy link ảnh.";
-    } catch (err) {
-      els.uploadStatus.style.color = "#c62828";
-      els.uploadStatus.textContent = "Lỗi: " + err.message;
+    const existing = getFormImagesClean();
+    const remainingSlots = 4 - existing.length;
+    if (remainingSlots <= 0) {
+      els.uploadStatus.style.color = "#b26a00";
+      els.uploadStatus.textContent = "Đã đủ tối đa 4 ảnh! Hãy xóa bớt nếu muốn thay ảnh mới.";
+      els.fileInput.value = "";
+      return;
     }
+
+    const filesToUpload = files.slice(0, remainingSlots);
+    if (files.length > remainingSlots) {
+      alert(`Mỗi sản phẩm tối đa 4 ảnh. Hệ thống sẽ tải ${filesToUpload.length} ảnh đầu tiên vào các ô còn trống.`);
+    }
+
+    let uploadedCount = 0;
+    const currentList = [...existing];
+
+    for (let i = 0; i < filesToUpload.length; i++) {
+      els.uploadStatus.style.color = "#1565c0";
+      els.uploadStatus.textContent = `Đang tải ảnh ${i + 1}/${filesToUpload.length} lên Cloudinary...`;
+
+      const formData = new FormData();
+      formData.append("file", filesToUpload[i]);
+      formData.append("upload_preset", uploadPreset);
+
+      try {
+        const res = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+          method: "POST",
+          body: formData
+        });
+        const data = await res.json();
+        if (!res.ok || !data.secure_url) {
+          throw new Error(data.error?.message || "Upload thất bại");
+        }
+        currentList.push(data.secure_url);
+        setFormImages(currentList);
+        uploadedCount++;
+      } catch (err) {
+        els.uploadStatus.style.color = "#c62828";
+        els.uploadStatus.textContent = `Lỗi ở ảnh ${i + 1}: ` + err.message;
+        els.fileInput.value = "";
+        return;
+      }
+    }
+
+    els.fileInput.value = "";
+    els.uploadStatus.style.color = "#1f7a4c";
+    els.uploadStatus.textContent = `Upload thành công ${uploadedCount} ảnh! Hiện có ${currentList.length}/4 ảnh.`;
   });
 
   function esc(str) {
-    return String(str ?? "").replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+    return String(str ?? "")
+      .replace(/\\/g, "\\\\")
+      .replace(/"/g, '\\"');
   }
 
   function buildJsFileContent() {
     const formatTab = (key) => {
       const arr = Array.isArray(tabData[key]) ? tabData[key] : [];
-      const items = arr.map(p => (
+      const items = arr.map(p => {
+        const imgs = getItemImages(p);
+        const mainImg = imgs[0] || p.img || p.image || "";
+        const extraField = imgs.length > 1
+          ? `,\n                images: [${imgs.map(u => `"${esc(u)}"`).join(", ")}]`
+          : "";
+
+        return (
 `                { code: "${esc(p.code)}",
-                title: "${esc(p.title)}",
+                title: "${esc(p.title || p.name)}",
                 price: "${esc(p.price)}",
                 oldPrice: "${esc(p.oldPrice)}",
                 badge: "${esc(p.badge)}",
                 badgeText: "${esc(p.badgeText)}",
-                img: "${esc(p.img)}",
+                img: "${esc(mainImg)}"${extraField},
                 desc: "${esc(p.desc)}" }`
-      )).join(",\n\n");
+        );
+      }).join(",\n\n");
       return `            "${key}": [\n${items}\n            ]`;
     };
 
@@ -383,15 +583,25 @@
     els.countBadge.textContent = `${list.length} mẫu`;
 
     list.forEach((item, idx) => {
-      const matchText = `${item.code} ${item.title} ${item.desc}`.toLowerCase();
+      const titleText = item.title || item.name || "";
+      const matchText = `${item.code} ${titleText} ${item.desc}`.toLowerCase();
       if (keyword && !matchText.includes(keyword)) return;
 
-      const badgeHtml = item.badgeText ? ` <span class="tag-pill">${item.badgeText}</span>` : "";
+      const imgs = getItemImages(item);
+      const coverImg = imgs[0] || "";
+      const countBadgeHtml = imgs.length > 1 ? `<span class="thumb-count">${imgs.length} ảnh</span>` : "";
+      const tagHtml = item.badgeText ? ` <span class="tag-pill">${item.badgeText}</span>` : "";
+
       const tr = document.createElement("tr");
       tr.innerHTML = `
-        <td><img src="${item.img}" alt="${item.code}" onerror="this.style.display='none'"></td>
+        <td>
+          <div class="thumb-wrap">
+            <img src="${coverImg}" alt="${item.code}" onerror="this.style.display='none'">
+            ${countBadgeHtml}
+          </div>
+        </td>
         <td><strong>${item.code}</strong></td>
-        <td>${item.title}${badgeHtml}</td>
+        <td>${titleText}${tagHtml}</td>
         <td>${item.price}</td>
         <td>
           <button class="btn-edit" onclick="editProduct(${idx})">Sửa</button>
@@ -410,7 +620,7 @@
     els.formTitle.textContent = `Thêm vào: ${tabInfo.label}`;
     els.saveBtn.textContent = "Lưu sản phẩm";
     els.fileInput.value = "";
-    els.imageUrl.value = "";
+    setFormImages([]);
     els.code.value = "";
     els.title.value = "";
     els.price.value = "4.200 đ";
@@ -419,7 +629,6 @@
     els.badgeText.value = "";
     els.desc.value = "";
     els.uploadStatus.textContent = "";
-    showPreview("");
   }
 
   window.editProduct = function(idx) {
@@ -429,14 +638,14 @@
     els.formTitle.textContent = `Đang sửa: ${item.code}`;
     els.saveBtn.textContent = "Cập nhật sản phẩm";
     els.code.value = item.code || "";
-    els.title.value = item.title || "";
+    els.title.value = item.title || item.name || "";
     els.price.value = item.price || "";
     els.oldPrice.value = item.oldPrice || "";
     els.badge.value = item.badge || "";
     els.badgeText.value = item.badgeText || "";
-    els.imageUrl.value = item.img || "";
+    setFormImages(getItemImages(item));
     els.desc.value = item.desc || "";
-    showPreview(item.img);
+    els.uploadStatus.textContent = "";
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -450,7 +659,8 @@
   els.saveBtn.addEventListener("click", () => {
     const code = els.code.value.trim();
     const title = els.title.value.trim();
-    const img = els.imageUrl.value.trim();
+    const imgs = getFormImagesClean();
+    const img = imgs[0] || "";
     const price = els.price.value.trim() || "Liên hệ";
     const oldPrice = els.oldPrice.value.trim();
     const badge = els.badge.value.trim();
@@ -458,11 +668,15 @@
     const desc = els.desc.value.trim() || title;
 
     if (!code || !title || !img) {
-      alert("Vui lòng nhập đủ Mã sản phẩm (code), Tên sản phẩm (title) và Link ảnh (img)!");
+      alert("Vui lòng nhập đủ Mã sản phẩm (code), Tên sản phẩm (title) và ít nhất Ảnh 1!");
       return;
     }
 
     const obj = { code, title, price, oldPrice, badge, badgeText, img, desc };
+    if (imgs.length > 1) {
+      obj.images = imgs;
+    }
+
     const list = getCurrentList();
     if (editingIndex >= 0) {
       list[editingIndex] = obj;

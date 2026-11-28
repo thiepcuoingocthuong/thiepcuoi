@@ -1,5 +1,18 @@
-// Dữ liệu danh mục Thiệp Cưới Truyền Thống
-const truyenthongProducts = [
+// Dữ liệu danh mục: 2. Thiệp Cưới Truyền Thống
+var truyenthongProducts = [
+    {
+        code: "DQ-BTN101B-659",
+        name: "Thiệp Cưới In Nhanh KTS đợt 6",
+        price: "5000đ",
+        image: "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659copy.jpg",
+        images: [
+            "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659copy.jpg",
+            "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu1copy.jpg",
+            "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu2copy.jpg"
+        ],
+        detailUrl: "chi-tiet-truyen-thong.html",
+        desc: "* B.Thư: Giấy ánh kim thơm 2MB 220g, In CMYK 1 mặt, + bế (BTN101B) khổ 17.6x12.6cm + dán. *Thiệp túi dạng kéo: Giấy ánh kim thơm 2MB 220g, In CMYK 2 mặt, dán cấu trúc kéo, khổ gập TP 11.2x15.5cm."
+    },
     {
         code: "HHY-9401",
         name: "Mẫu thiệp HHY-9401",

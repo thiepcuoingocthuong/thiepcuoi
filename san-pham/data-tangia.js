@@ -1,5 +1,18 @@
 // File: assets/js/data-hiendai.js
 const tangiaProducts = [
+      {
+        code: "DQ-BTN101B-659",
+        name: "Thiệp Cưới In Nhanh KTS đợt 6",
+        price: "5000đ",
+        image: "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659copy.jpg",
+        images: [
+            "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659copy.jpg",
+            "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu1copy.jpg",
+            "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu2copy.jpg"
+        ],
+        detailUrl: "chi-tiet-truyen-thong.html",
+        desc: "* B.Thư: Giấy ánh kim thơm 2MB 220g, In CMYK 1 mặt, + bế (BTN101B) khổ 17.6x12.6cm + dán. *Thiệp túi dạng kéo: Giấy ánh kim thơm 2MB 220g, In CMYK 2 mặt, dán cấu trúc kéo, khổ gập TP 11.2x15.5cm."
+    },
  {
         code: "HHY-325",
         name: "Thiệp mời tân gia HHY-325",

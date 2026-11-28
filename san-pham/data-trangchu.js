@@ -2,6 +2,16 @@
 // Dữ liệu cho 3 Tab sản phẩm
 const tabProductsData = {
             "best-seller": [
+                { code: "DQ-BTN101B-659",
+                title: "Thiệp Cưới In Nhanh KTS đợt 6",
+                price: "4.200 đ",
+                oldPrice: "",
+                badge: "hot-badge",
+                badgeText: "",
+                img: "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu2copy.jpg",
+                images: ["https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu2copy.jpg", "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu1copy.jpg", "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu2copy.jpg"],
+                desc: "* B.Thư: Giấy ánh kim thơm 2MB 220g, In CMYK 1 mặt, + bế (BTN101B) khổ 17.6x12.6cm + dán. *Thiệp túi dạng kéo: Giấy ánh kim thơm 2MB 220g, In CMYK 2 mặt, dán cấu trúc kéo, khổ gập TP 11.2x15.5cm." },
+
                 { code: "HHY-6160",
                 title: "Thiệp Cưới HHY-6160 kem Sang Trọng",
                 price: "4.500 đ",
@@ -39,6 +49,16 @@ const tabProductsData = {
                 desc: "Là Mẫu thiệp cưới được in trên máy in nhanh KTS, đặc điểm của hình thức in này là mực in rất bóng, thể hiện màu sắc rất tốt." }
             ],
             "new-arrival": [
+                { code: "DQ-BTN101B-659",
+                title: "Thiệp Cưới In Nhanh KTS đợt 6",
+                price: "4.200 đ",
+                oldPrice: "",
+                badge: "new-badge",
+                badgeText: "Mới",
+                img: "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu2copy.jpg",
+                images: ["https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu2copy.jpg", "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu1copy.jpg", "https://ducquyencards.com/upload/images/2026/07/1784874920-DQBTN101B659phu2copy.jpg"],
+                desc: "* B.Thư: Giấy ánh kim thơm 2MB 220g, In CMYK 1 mặt, + bế (BTN101B) khổ 17.6x12.6cm + dán. *Thiệp túi dạng kéo: Giấy ánh kim thơm 2MB 220g, In CMYK 2 mặt, dán cấu trúc kéo, khổ gập TP 11.2x15.5cm." },
+
                 { code: "HHY-605",
                 title: "THIỆP CƯỚI ĐỘC QUYỀN HHY-605",
                 price: "4.500 đ",
